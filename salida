@@ -1,0 +1,7555 @@
+ENTRY tigerframe.newFrame(...):
+tigerframe.newFrame(...): frame name: _tigermain formals length: 0
+END tigerframe.newFrame(...):
+
+
+
+**********  AST:  ********** 
+
+LetExp{decs=[VarDec{name=N,escape=true,typ=NONE,init=8}
+             TypeDec([{name=intArray,ty=ArrayTy(int)}])
+             VarDec{name=row,escape=true,typ=NONE,
+              init=ArrayExp{test=intArray,size=VarExp(SimpleVar(N)),init=0}}
+             VarDec{name=col,escape=true,typ=NONE,
+              init=ArrayExp{test=intArray,size=VarExp(SimpleVar(N)),init=0}}
+             VarDec{name=diag1,escape=true,typ=NONE,
+              init=ArrayExp{test=intArray,
+                    size=OpExp{
+                         left=OpExp{left=VarExp(SimpleVar(N)),oper=PlusOp,
+                               right=VarExp(SimpleVar(N))},oper=MinusOp,
+                          right=1},init=0}}
+             VarDec{name=diag2,escape=true,typ=NONE,
+              init=ArrayExp{test=intArray,
+                    size=OpExp{
+                         left=OpExp{left=VarExp(SimpleVar(N)),oper=PlusOp,
+                               right=VarExp(SimpleVar(N))},oper=MinusOp,
+                          right=1},init=0}}
+             FunctionDec([{name=printboard,params=[],result=NONE
+             body=SeqExp([ForExp{var=i,escape=false,lo=0,
+                          hi=OpExp{left=VarExp(SimpleVar(N)),oper=MinusOp,
+                              right=1},
+                          body=SeqExp([ForExp{var=j,escape=false,lo=0,
+                                       hi=OpExp{left=VarExp(SimpleVar(N)),
+                                           oper=MinusOp,right=1},
+                                       body=CallExp{func=print,
+                                            args=[IfExp{
+                                                  test=OpExp{
+                                                       left=VarExp(
+                                                             SubscriptVar(
+                                                              SimpleVar(col),
+                                                              VarExp(
+                                                               SimpleVar(i)))),
+                                                        oper=EqOp,
+                                                        right=VarExp(
+                                                               SimpleVar(j))},
+                                                  then'=" O",else'=" ."}]}}
+                               CallExp{func=print,args=["
+"]}])}
+                  CallExp{func=print,args=["
+"]}])}{name=try,params=[{name=c,
+              escape=falsetyp=NameTy(int)}],result=NONE
+             body=IfExp{
+                  test=OpExp{left=VarExp(SimpleVar(c)),oper=EqOp,
+                        right=VarExp(SimpleVar(N))},
+                  then'=CallExp{func=printboard,args=[]},
+                  else'=ForExp{var=r,escape=false,lo=0,
+                        hi=OpExp{left=VarExp(SimpleVar(N)),oper=MinusOp,
+                            right=1},
+                        body=IfExp{
+                             test=IfExp{
+                                  test=IfExp{
+                                       test=OpExp{
+                                            left=VarExp(
+                                                  SubscriptVar(SimpleVar(row),
+                                                   VarExp(SimpleVar(r)))),
+                                             oper=EqOp,right=0},
+                                       then'=OpExp{
+                                             left=VarExp(
+                                                   SubscriptVar(
+                                                    SimpleVar(diag1),
+                                                    OpExp{
+                                                    left=VarExp(SimpleVar(r)),
+                                                     oper=PlusOp,
+                                                     right=VarExp(SimpleVar(c))
+                                                           })),oper=EqOp,
+                                              right=0},else'=0},
+                                  then'=OpExp{
+                                        left=VarExp(
+                                              SubscriptVar(SimpleVar(diag2),
+                                               OpExp{
+                                               left=OpExp{
+                                                    left=VarExp(SimpleVar(r)),
+                                                     oper=PlusOp,right=7},
+                                                oper=MinusOp,
+                                                right=VarExp(SimpleVar(c))})),
+                                         oper=EqOp,right=0},else'=0},
+                             then'=SeqExp([AssignExp{
+                                            var=SubscriptVar(SimpleVar(row),
+                                                 VarExp(SimpleVar(r))),exp=1}
+                                   AssignExp{
+                                    var=SubscriptVar(SimpleVar(diag1),
+                                         OpExp{left=VarExp(SimpleVar(r)),
+                                          oper=PlusOp,
+                                          right=VarExp(SimpleVar(c))}),exp=1}
+                                   AssignExp{
+                                    var=SubscriptVar(SimpleVar(diag2),
+                                         OpExp{
+                                         left=OpExp{left=VarExp(SimpleVar(r)),
+                                               oper=PlusOp,right=7},
+                                          oper=MinusOp,
+                                          right=VarExp(SimpleVar(c))}),exp=1}
+                                   AssignExp{
+                                    var=SubscriptVar(SimpleVar(col),
+                                         VarExp(SimpleVar(c))),
+                                    exp=VarExp(SimpleVar(r))}
+                                   CallExp{func=try,
+                                   args=[OpExp{left=VarExp(SimpleVar(c)),
+                                          oper=PlusOp,right=1}]}
+                                   AssignExp{
+                                    var=SubscriptVar(SimpleVar(row),
+                                         VarExp(SimpleVar(r))),exp=0}
+                                   AssignExp{
+                                    var=SubscriptVar(SimpleVar(diag1),
+                                         OpExp{left=VarExp(SimpleVar(r)),
+                                          oper=PlusOp,
+                                          right=VarExp(SimpleVar(c))}),exp=0}
+                                   AssignExp{
+                                    var=SubscriptVar(SimpleVar(diag2),
+                                         OpExp{
+                                         left=OpExp{left=VarExp(SimpleVar(r)),
+                                               oper=PlusOp,right=7},
+                                          oper=MinusOp,
+                                          right=VarExp(SimpleVar(c))}),exp=0}])
+                                   ,else'=NONE}}}}])],
+ body=SeqExp([CallExp{func=try,args=[0]}0])}
+
+
+
+ENTRY tigerframe.newFrame(...):
+tigerframe.newFrame(...): frame name: tigermain formals length: 1
+END tigerframe.newFrame(...):
+ENTRY tigerframe.allocLocal(...):
+tigerframe.allocLocal(...): frame: tigermain localsInFrame: 1 actualLocal: ~4
+END tigerframe.allocLocal
+tigerseman.trdec(...): type NONE:
+tigerseman.trdec(...): variable: N escapada: true level - nro - 0
+tigertrans.allocLocal(...) 
+ENTRY tigerframe.allocLocal(...):
+tigerframe.allocLocal(...): frame: tigermain localsInFrame: 2 actualLocal: ~8
+END tigerframe.allocLocal
+ENTRY tigretrans.varDec(...) getActualLev():  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+tigerseman.trdec(...): type NONE:
+tigerseman.trdec(...): variable: row escapada: true level - nro - 0
+tigertrans.allocLocal(...) 
+ENTRY tigerframe.allocLocal(...):
+tigerframe.allocLocal(...): frame: tigermain localsInFrame: 3 actualLocal: ~12
+END tigerframe.allocLocal
+ENTRY tigretrans.varDec(...) getActualLev():  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+tigerseman.trdec(...): type NONE:
+tigerseman.trdec(...): variable: col escapada: true level - nro - 0
+tigertrans.allocLocal(...) 
+ENTRY tigerframe.allocLocal(...):
+tigerframe.allocLocal(...): frame: tigermain localsInFrame: 4 actualLocal: ~16
+END tigerframe.allocLocal
+ENTRY tigretrans.varDec(...) getActualLev():  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+tigerseman.trdec(...): type NONE:
+tigerseman.trdec(...): variable: diag1 escapada: true level - nro - 0
+tigertrans.allocLocal(...) 
+ENTRY tigerframe.allocLocal(...):
+tigerframe.allocLocal(...): frame: tigermain localsInFrame: 5 actualLocal: ~20
+END tigerframe.allocLocal
+ENTRY tigretrans.varDec(...) getActualLev():  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+tigerseman.trdec(...): type NONE:
+tigerseman.trdec(...): variable: diag2 escapada: true level - nro - 0
+tigertrans.allocLocal(...) 
+ENTRY tigerframe.allocLocal(...):
+tigerframe.allocLocal(...): frame: tigermain localsInFrame: 6 actualLocal: ~24
+END tigerframe.allocLocal
+ENTRY tigretrans.varDec(...) getActualLev():  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  0
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigerframe.newFrame(...):
+tigerframe.newFrame(...): frame name: L0 formals length: 1
+END tigerframe.newFrame(...):
+ENTRY tigerframe.allocLocal(...):
+tigerframe.allocLocal(...): frame: L0 localsInFrame: 1 actualLocal: ~4
+END tigerframe.allocLocal
+ENTRY tigerframe.newFrame(...):
+tigerframe.newFrame(...): frame name: L1 formals length: 2
+END tigerframe.newFrame(...):
+ENTRY tigerframe.allocLocal(...):
+tigerframe.allocLocal(...): frame: L1 localsInFrame: 1 actualLocal: ~4
+END tigerframe.allocLocal
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+tigertrans.allocLocal(...) 
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+tigertrans.allocLocal(...) 
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigertrans.callExp(...)
+   Nombre de la funcion: print
+   Es externa: true
+   Es procedimiento: true
+   getActualLev(): 1
+   Nivel de la funcion(): ~1
+END tigertrans.callExp(...)
+ENTRY tigertrans.callExp(...)
+   Nombre de la funcion: print
+   Es externa: true
+   Es procedimiento: true
+   getActualLev(): 1
+   Nivel de la funcion(): ~1
+END tigertrans.callExp(...)
+ENTRY tigertrans.callExp(...)
+   Nombre de la funcion: print
+   Es externa: true
+   Es procedimiento: true
+   getActualLev(): 1
+   Nivel de la funcion(): ~1
+END tigertrans.callExp(...)
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigertrans.callExp(...)
+   Nombre de la funcion: L0
+   Es externa: false
+   Es procedimiento: true
+   getActualLev(): 1
+   Nivel de la funcion(): 1
+END tigertrans.callExp(...)
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+tigertrans.allocLocal(...) 
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigertrans.callExp(...)
+   Nombre de la funcion: L1
+   Es externa: false
+   Es procedimiento: true
+   getActualLev(): 1
+   Nivel de la funcion(): 1
+END tigertrans.callExp(...)
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  0
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigretrans.simpleVar(...) getActualLev():  1
+tigretrans.simpleVar(...) nivel de la variable:  1
+ENTRY tigertrans.callExp(...)
+   Nombre de la funcion: L1
+   Es externa: false
+   Es procedimiento: true
+   getActualLev(): 0
+   Nivel de la funcion(): 1
+END tigertrans.callExp(...)
+bien!
+
+
+
+**********  CÓDIGO INTERMEDIO:  ********** 
+
+
+String Fragment:
+L4:	 O
+
+String Fragment:
+L5:	 .
+
+String Fragment:
+L12:	
+
+
+String Fragment:
+L16:	
+
+
+Fragment "L0":
+SEQ(
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP fp,
+    CONST 0)),
+  TEMP r0),
+ SEQ(
+  SEQ(
+   MOVE(
+    TEMP T7,
+    BINOP(MINUS,
+     MEM(
+      BINOP(MINUS,
+       MEM(
+        BINOP(PLUS,
+         CONST 0,
+         TEMP fp)),
+       CONST 4)),
+     CONST 1)),
+   SEQ(
+    MOVE(
+     TEMP T1,
+     CONST 0),
+    SEQ(
+     JUMP(      NAME L13),
+     SEQ(
+      LABEL L15,
+      SEQ(
+       MOVE(
+        TEMP T1,
+        BINOP(PLUS,
+         TEMP T1,
+         CONST 1)),
+       SEQ(
+        LABEL L13,
+        SEQ(
+         CJUMP(LE,
+          TEMP T1,
+          TEMP T7,
+          L14,L2),
+         SEQ(
+          LABEL L14,
+          SEQ(
+           SEQ(
+            SEQ(
+             MOVE(
+              TEMP T6,
+              BINOP(MINUS,
+               MEM(
+                BINOP(MINUS,
+                 MEM(
+                  BINOP(PLUS,
+                   CONST 0,
+                   TEMP fp)),
+                 CONST 4)),
+               CONST 1)),
+             SEQ(
+              MOVE(
+               TEMP T2,
+               CONST 0),
+              SEQ(
+               JUMP(                NAME L9),
+               SEQ(
+                LABEL L11,
+                SEQ(
+                 MOVE(
+                  TEMP T2,
+                  BINOP(PLUS,
+                   TEMP T2,
+                   CONST 1)),
+                 SEQ(
+                  LABEL L9,
+                  SEQ(
+                   CJUMP(LE,
+                    TEMP T2,
+                    TEMP T6,
+                    L10,L3),
+                   SEQ(
+                    LABEL L10,
+                    SEQ(
+                     SEQ(
+                      MOVE(
+                       TEMP T5,
+                       ESEQ(
+                        SEQ(
+                         CJUMP(EQ,
+                          ESEQ(
+                           SEQ(
+                            MOVE(
+                             TEMP T3,
+                             MEM(
+                              BINOP(MINUS,
+                               MEM(
+                                BINOP(PLUS,
+                                 CONST 0,
+                                 TEMP fp)),
+                               CONST 12))),
+                            EXP(
+                             CALL(
+                              NAME _checkIndexArray,
+                               TEMP T3,
+                               TEMP T1))),
+                           MEM(
+                            BINOP(PLUS,
+                             TEMP T3,
+                             BINOP(LSHIFT,
+                              TEMP T1,
+                              CONST 2)))),
+                          TEMP T2,
+                          L6,L7),
+                         SEQ(
+                          LABEL L6,
+                          SEQ(
+                           MOVE(
+                            TEMP T4,
+                            NAME L4),
+                           SEQ(
+                            JUMP(                             NAME L8),
+                            SEQ(
+                             LABEL L7,
+                             SEQ(
+                              MOVE(
+                               TEMP T4,
+                               NAME L5),
+                              SEQ(
+                               JUMP(                                NAME L8),
+                               LABEL L8))))))),
+                        TEMP T4)),
+                      EXP(
+                       CALL(
+                        NAME print,
+                         TEMP T5))),
+                     SEQ(
+                      CJUMP(EQ,
+                       TEMP T2,
+                       TEMP T6,
+                       L3,L11),
+                      LABEL L3)))))))))),
+            EXP(
+             CALL(
+              NAME print,
+               NAME L12))),
+           SEQ(
+            CJUMP(EQ,
+             TEMP T1,
+             TEMP T7,
+             L2,L15),
+            LABEL L2)))))))))),
+  EXP(
+   CALL(
+    NAME print,
+     NAME L16))))
+
+Fragment "L1":
+SEQ(
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP fp,
+    CONST 0)),
+  TEMP r0),
+ SEQ(
+  MOVE(
+   TEMP T0,
+   TEMP r1),
+  SEQ(
+   CJUMP(EQ,
+    TEMP T0,
+    MEM(
+     BINOP(MINUS,
+      MEM(
+       BINOP(PLUS,
+        CONST 0,
+        TEMP fp)),
+      CONST 4)),
+    L25,L26),
+   SEQ(
+    LABEL L25,
+    SEQ(
+     EXP(
+      CALL(
+       NAME L0,
+        MEM(
+         BINOP(PLUS,
+          CONST 0,
+          TEMP fp)))),
+     SEQ(
+      JUMP(       NAME L27),
+      SEQ(
+       LABEL L26,
+       SEQ(
+        SEQ(
+         MOVE(
+          TEMP T20,
+          BINOP(MINUS,
+           MEM(
+            BINOP(MINUS,
+             MEM(
+              BINOP(PLUS,
+               CONST 0,
+               TEMP fp)),
+             CONST 4)),
+           CONST 1)),
+         SEQ(
+          MOVE(
+           TEMP T8,
+           CONST 0),
+          SEQ(
+           JUMP(            NAME L22),
+           SEQ(
+            LABEL L24,
+            SEQ(
+             MOVE(
+              TEMP T8,
+              BINOP(PLUS,
+               TEMP T8,
+               CONST 1)),
+             SEQ(
+              LABEL L22,
+              SEQ(
+               CJUMP(LE,
+                TEMP T8,
+                TEMP T20,
+                L23,L17),
+               SEQ(
+                LABEL L23,
+                SEQ(
+                 SEQ(
+                  SEQ(
+                   SEQ(
+                    CJUMP(EQ,
+                     ESEQ(
+                      SEQ(
+                       MOVE(
+                        TEMP T9,
+                        MEM(
+                         BINOP(MINUS,
+                          MEM(
+                           BINOP(PLUS,
+                            CONST 0,
+                            TEMP fp)),
+                          CONST 8))),
+                       EXP(
+                        CALL(
+                         NAME _checkIndexArray,
+                          TEMP T9,
+                          TEMP T8))),
+                      MEM(
+                       BINOP(PLUS,
+                        TEMP T9,
+                        BINOP(LSHIFT,
+                         TEMP T8,
+                         CONST 2)))),
+                     CONST 0,
+                     L18,L21),
+                    SEQ(
+                     LABEL L18,
+                     CJUMP(EQ,
+                      ESEQ(
+                       SEQ(
+                        MOVE(
+                         TEMP T10,
+                         MEM(
+                          BINOP(MINUS,
+                           MEM(
+                            BINOP(PLUS,
+                             CONST 0,
+                             TEMP fp)),
+                           CONST 16))),
+                        EXP(
+                         CALL(
+                          NAME _checkIndexArray,
+                           TEMP T10,
+                           BINOP(PLUS,
+                            TEMP T8,
+                            TEMP T0)))),
+                       MEM(
+                        BINOP(PLUS,
+                         TEMP T10,
+                         BINOP(LSHIFT,
+                          BINOP(PLUS,
+                           TEMP T8,
+                           TEMP T0),
+                          CONST 2)))),
+                      CONST 0,
+                      L19,L21))),
+                   SEQ(
+                    LABEL L19,
+                    CJUMP(EQ,
+                     ESEQ(
+                      SEQ(
+                       MOVE(
+                        TEMP T11,
+                        MEM(
+                         BINOP(MINUS,
+                          MEM(
+                           BINOP(PLUS,
+                            CONST 0,
+                            TEMP fp)),
+                          CONST 20))),
+                       EXP(
+                        CALL(
+                         NAME _checkIndexArray,
+                          TEMP T11,
+                          BINOP(MINUS,
+                           BINOP(PLUS,
+                            TEMP T8,
+                            CONST 7),
+                           TEMP T0)))),
+                      MEM(
+                       BINOP(PLUS,
+                        TEMP T11,
+                        BINOP(LSHIFT,
+                         BINOP(MINUS,
+                          BINOP(PLUS,
+                           TEMP T8,
+                           CONST 7),
+                          TEMP T0),
+                         CONST 2)))),
+                     CONST 0,
+                     L20,L21))),
+                  SEQ(
+                   LABEL L20,
+                   SEQ(
+                    SEQ(
+                     MOVE(
+                      ESEQ(
+                       SEQ(
+                        MOVE(
+                         TEMP T12,
+                         MEM(
+                          BINOP(MINUS,
+                           MEM(
+                            BINOP(PLUS,
+                             CONST 0,
+                             TEMP fp)),
+                           CONST 8))),
+                        EXP(
+                         CALL(
+                          NAME _checkIndexArray,
+                           TEMP T12,
+                           TEMP T8))),
+                       MEM(
+                        BINOP(PLUS,
+                         TEMP T12,
+                         BINOP(LSHIFT,
+                          TEMP T8,
+                          CONST 2)))),
+                      CONST 1),
+                     SEQ(
+                      MOVE(
+                       ESEQ(
+                        SEQ(
+                         MOVE(
+                          TEMP T13,
+                          MEM(
+                           BINOP(MINUS,
+                            MEM(
+                             BINOP(PLUS,
+                              CONST 0,
+                              TEMP fp)),
+                            CONST 16))),
+                         EXP(
+                          CALL(
+                           NAME _checkIndexArray,
+                            TEMP T13,
+                            BINOP(PLUS,
+                             TEMP T8,
+                             TEMP T0)))),
+                        MEM(
+                         BINOP(PLUS,
+                          TEMP T13,
+                          BINOP(LSHIFT,
+                           BINOP(PLUS,
+                            TEMP T8,
+                            TEMP T0),
+                           CONST 2)))),
+                       CONST 1),
+                      SEQ(
+                       MOVE(
+                        ESEQ(
+                         SEQ(
+                          MOVE(
+                           TEMP T14,
+                           MEM(
+                            BINOP(MINUS,
+                             MEM(
+                              BINOP(PLUS,
+                               CONST 0,
+                               TEMP fp)),
+                             CONST 20))),
+                          EXP(
+                           CALL(
+                            NAME _checkIndexArray,
+                             TEMP T14,
+                             BINOP(MINUS,
+                              BINOP(PLUS,
+                               TEMP T8,
+                               CONST 7),
+                              TEMP T0)))),
+                         MEM(
+                          BINOP(PLUS,
+                           TEMP T14,
+                           BINOP(LSHIFT,
+                            BINOP(MINUS,
+                             BINOP(PLUS,
+                              TEMP T8,
+                              CONST 7),
+                             TEMP T0),
+                            CONST 2)))),
+                        CONST 1),
+                       SEQ(
+                        MOVE(
+                         ESEQ(
+                          SEQ(
+                           MOVE(
+                            TEMP T15,
+                            MEM(
+                             BINOP(MINUS,
+                              MEM(
+                               BINOP(PLUS,
+                                CONST 0,
+                                TEMP fp)),
+                              CONST 12))),
+                           EXP(
+                            CALL(
+                             NAME _checkIndexArray,
+                              TEMP T15,
+                              TEMP T0))),
+                          MEM(
+                           BINOP(PLUS,
+                            TEMP T15,
+                            BINOP(LSHIFT,
+                             TEMP T0,
+                             CONST 2)))),
+                         TEMP T8),
+                        SEQ(
+                         SEQ(
+                          MOVE(
+                           TEMP T16,
+                           BINOP(PLUS,
+                            TEMP T0,
+                            CONST 1)),
+                          EXP(
+                           CALL(
+                            NAME L1,
+                             MEM(
+                              BINOP(PLUS,
+                               CONST 0,
+                               TEMP fp)),
+                             TEMP T16))),
+                         SEQ(
+                          MOVE(
+                           ESEQ(
+                            SEQ(
+                             MOVE(
+                              TEMP T17,
+                              MEM(
+                               BINOP(MINUS,
+                                MEM(
+                                 BINOP(PLUS,
+                                  CONST 0,
+                                  TEMP fp)),
+                                CONST 8))),
+                             EXP(
+                              CALL(
+                               NAME _checkIndexArray,
+                                TEMP T17,
+                                TEMP T8))),
+                            MEM(
+                             BINOP(PLUS,
+                              TEMP T17,
+                              BINOP(LSHIFT,
+                               TEMP T8,
+                               CONST 2)))),
+                           CONST 0),
+                          SEQ(
+                           MOVE(
+                            ESEQ(
+                             SEQ(
+                              MOVE(
+                               TEMP T18,
+                               MEM(
+                                BINOP(MINUS,
+                                 MEM(
+                                  BINOP(PLUS,
+                                   CONST 0,
+                                   TEMP fp)),
+                                 CONST 16))),
+                              EXP(
+                               CALL(
+                                NAME _checkIndexArray,
+                                 TEMP T18,
+                                 BINOP(PLUS,
+                                  TEMP T8,
+                                  TEMP T0)))),
+                             MEM(
+                              BINOP(PLUS,
+                               TEMP T18,
+                               BINOP(LSHIFT,
+                                BINOP(PLUS,
+                                 TEMP T8,
+                                 TEMP T0),
+                                CONST 2)))),
+                            CONST 0),
+                           MOVE(
+                            ESEQ(
+                             SEQ(
+                              MOVE(
+                               TEMP T19,
+                               MEM(
+                                BINOP(MINUS,
+                                 MEM(
+                                  BINOP(PLUS,
+                                   CONST 0,
+                                   TEMP fp)),
+                                 CONST 20))),
+                              EXP(
+                               CALL(
+                                NAME _checkIndexArray,
+                                 TEMP T19,
+                                 BINOP(MINUS,
+                                  BINOP(PLUS,
+                                   TEMP T8,
+                                   CONST 7),
+                                  TEMP T0)))),
+                             MEM(
+                              BINOP(PLUS,
+                               TEMP T19,
+                               BINOP(LSHIFT,
+                                BINOP(MINUS,
+                                 BINOP(PLUS,
+                                  TEMP T8,
+                                  CONST 7),
+                                 TEMP T0),
+                                CONST 2)))),
+                            CONST 0)))))))),
+                    LABEL L21))),
+                 SEQ(
+                  CJUMP(EQ,
+                   TEMP T8,
+                   TEMP T20,
+                   L17,L24),
+                  LABEL L17)))))))))),
+        SEQ(
+         JUMP(          NAME L27),
+         LABEL L27)))))))))
+
+Fragment "tigermain":
+SEQ(
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP fp,
+    CONST 0)),
+  TEMP r0),
+ EXP(
+  ESEQ(
+   SEQ(
+    MOVE(
+     MEM(
+      BINOP(MINUS,
+       TEMP fp,
+       CONST 4)),
+     CONST 8),
+    SEQ(
+     MOVE(
+      MEM(
+       BINOP(MINUS,
+        TEMP fp,
+        CONST 8)),
+      CALL(
+       NAME _initArray,
+        MEM(
+         BINOP(MINUS,
+          TEMP fp,
+          CONST 4)),
+        CONST 0)),
+     SEQ(
+      MOVE(
+       MEM(
+        BINOP(MINUS,
+         TEMP fp,
+         CONST 12)),
+       CALL(
+        NAME _initArray,
+         MEM(
+          BINOP(MINUS,
+           TEMP fp,
+           CONST 4)),
+         CONST 0)),
+      SEQ(
+       MOVE(
+        MEM(
+         BINOP(MINUS,
+          TEMP fp,
+          CONST 16)),
+        CALL(
+         NAME _initArray,
+          BINOP(MINUS,
+           BINOP(PLUS,
+            MEM(
+             BINOP(MINUS,
+              TEMP fp,
+              CONST 4)),
+            MEM(
+             BINOP(MINUS,
+              TEMP fp,
+              CONST 4))),
+           CONST 1),
+          CONST 0)),
+       MOVE(
+        MEM(
+         BINOP(MINUS,
+          TEMP fp,
+          CONST 20)),
+        CALL(
+         NAME _initArray,
+          BINOP(MINUS,
+           BINOP(PLUS,
+            MEM(
+             BINOP(MINUS,
+              TEMP fp,
+              CONST 4)),
+            MEM(
+             BINOP(MINUS,
+              TEMP fp,
+              CONST 4))),
+           CONST 1),
+          CONST 0)))))),
+   ESEQ(
+    EXP(
+     CALL(
+      NAME L1,
+       TEMP fp,
+       CONST 0)),
+    CONST 0))))
+
+
+
+**********  CÓDIGO INTERMEDIO CANONIZADO: **********  
+
+
+String Fragment:
+L4:	 O
+
+String Fragment:
+L5:	 .
+
+String Fragment:
+L12:	
+
+
+String Fragment:
+L16:	
+
+
+Fragment "L0":
+LABEL L29
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP fp,
+   CONST 0)),
+ TEMP r0)
+MOVE(
+ TEMP T7,
+ BINOP(MINUS,
+  MEM(
+   BINOP(MINUS,
+    MEM(
+     BINOP(PLUS,
+      CONST 0,
+      TEMP fp)),
+    CONST 4)),
+  CONST 1))
+MOVE(
+ TEMP T1,
+ CONST 0)
+LABEL L13
+CJUMP(LE,
+ TEMP T1,
+ TEMP T7,
+ L14,L2)
+LABEL L2
+EXP(
+ CALL(
+  NAME print,
+   NAME L16))
+JUMP( NAME L28)
+LABEL L15
+MOVE(
+ TEMP T1,
+ BINOP(PLUS,
+  TEMP T1,
+  CONST 1))
+JUMP( NAME L13)
+LABEL L14
+MOVE(
+ TEMP T6,
+ BINOP(MINUS,
+  MEM(
+   BINOP(MINUS,
+    MEM(
+     BINOP(PLUS,
+      CONST 0,
+      TEMP fp)),
+    CONST 4)),
+  CONST 1))
+MOVE(
+ TEMP T2,
+ CONST 0)
+LABEL L9
+CJUMP(LE,
+ TEMP T2,
+ TEMP T6,
+ L10,L3)
+LABEL L3
+EXP(
+ CALL(
+  NAME print,
+   NAME L12))
+CJUMP(EQ,
+ TEMP T1,
+ TEMP T7,
+ L2,L30)
+LABEL L30
+JUMP( NAME L15)
+LABEL L11
+MOVE(
+ TEMP T2,
+ BINOP(PLUS,
+  TEMP T2,
+  CONST 1))
+JUMP( NAME L9)
+LABEL L10
+MOVE(
+ TEMP T3,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 12)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T3,
+   TEMP T1))
+CJUMP(EQ,
+ MEM(
+  BINOP(PLUS,
+   TEMP T3,
+   BINOP(LSHIFT,
+    TEMP T1,
+    CONST 2))),
+ TEMP T2,
+ L6,L7)
+LABEL L7
+MOVE(
+ TEMP T4,
+ NAME L5)
+LABEL L8
+MOVE(
+ TEMP T5,
+ TEMP T4)
+EXP(
+ CALL(
+  NAME print,
+   TEMP T5))
+CJUMP(EQ,
+ TEMP T2,
+ TEMP T6,
+ L3,L31)
+LABEL L31
+JUMP( NAME L11)
+LABEL L6
+MOVE(
+ TEMP T4,
+ NAME L4)
+JUMP( NAME L8)
+LABEL L28
+
+Fragment "L1":
+LABEL L33
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP fp,
+   CONST 0)),
+ TEMP r0)
+MOVE(
+ TEMP T0,
+ TEMP r1)
+CJUMP(EQ,
+ TEMP T0,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 4)),
+ L25,L26)
+LABEL L26
+MOVE(
+ TEMP T20,
+ BINOP(MINUS,
+  MEM(
+   BINOP(MINUS,
+    MEM(
+     BINOP(PLUS,
+      CONST 0,
+      TEMP fp)),
+    CONST 4)),
+  CONST 1))
+MOVE(
+ TEMP T8,
+ CONST 0)
+LABEL L22
+CJUMP(LE,
+ TEMP T8,
+ TEMP T20,
+ L23,L17)
+LABEL L17
+LABEL L27
+JUMP( NAME L32)
+LABEL L25
+EXP(
+ CALL(
+  NAME L0,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp))))
+JUMP( NAME L27)
+LABEL L24
+MOVE(
+ TEMP T8,
+ BINOP(PLUS,
+  TEMP T8,
+  CONST 1))
+JUMP( NAME L22)
+LABEL L23
+MOVE(
+ TEMP T9,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 8)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T9,
+   TEMP T8))
+CJUMP(EQ,
+ MEM(
+  BINOP(PLUS,
+   TEMP T9,
+   BINOP(LSHIFT,
+    TEMP T8,
+    CONST 2))),
+ CONST 0,
+ L18,L21)
+LABEL L21
+CJUMP(EQ,
+ TEMP T8,
+ TEMP T20,
+ L17,L34)
+LABEL L34
+JUMP( NAME L24)
+LABEL L18
+MOVE(
+ TEMP T10,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 16)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T10,
+   BINOP(PLUS,
+    TEMP T8,
+    TEMP T0)))
+CJUMP(NE,
+ MEM(
+  BINOP(PLUS,
+   TEMP T10,
+   BINOP(LSHIFT,
+    BINOP(PLUS,
+     TEMP T8,
+     TEMP T0),
+    CONST 2))),
+ CONST 0,
+ L21,L19)
+LABEL L19
+MOVE(
+ TEMP T11,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 20)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T11,
+   BINOP(MINUS,
+    BINOP(PLUS,
+     TEMP T8,
+     CONST 7),
+    TEMP T0)))
+CJUMP(NE,
+ MEM(
+  BINOP(PLUS,
+   TEMP T11,
+   BINOP(LSHIFT,
+    BINOP(MINUS,
+     BINOP(PLUS,
+      TEMP T8,
+      CONST 7),
+     TEMP T0),
+    CONST 2))),
+ CONST 0,
+ L21,L20)
+LABEL L20
+MOVE(
+ TEMP T12,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 8)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T12,
+   TEMP T8))
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP T12,
+   BINOP(LSHIFT,
+    TEMP T8,
+    CONST 2))),
+ CONST 1)
+MOVE(
+ TEMP T13,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 16)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T13,
+   BINOP(PLUS,
+    TEMP T8,
+    TEMP T0)))
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP T13,
+   BINOP(LSHIFT,
+    BINOP(PLUS,
+     TEMP T8,
+     TEMP T0),
+    CONST 2))),
+ CONST 1)
+MOVE(
+ TEMP T14,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 20)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T14,
+   BINOP(MINUS,
+    BINOP(PLUS,
+     TEMP T8,
+     CONST 7),
+    TEMP T0)))
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP T14,
+   BINOP(LSHIFT,
+    BINOP(MINUS,
+     BINOP(PLUS,
+      TEMP T8,
+      CONST 7),
+     TEMP T0),
+    CONST 2))),
+ CONST 1)
+MOVE(
+ TEMP T15,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 12)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T15,
+   TEMP T0))
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP T15,
+   BINOP(LSHIFT,
+    TEMP T0,
+    CONST 2))),
+ TEMP T8)
+MOVE(
+ TEMP T16,
+ BINOP(PLUS,
+  TEMP T0,
+  CONST 1))
+EXP(
+ CALL(
+  NAME L1,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   TEMP T16))
+MOVE(
+ TEMP T17,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 8)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T17,
+   TEMP T8))
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP T17,
+   BINOP(LSHIFT,
+    TEMP T8,
+    CONST 2))),
+ CONST 0)
+MOVE(
+ TEMP T18,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 16)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T18,
+   BINOP(PLUS,
+    TEMP T8,
+    TEMP T0)))
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP T18,
+   BINOP(LSHIFT,
+    BINOP(PLUS,
+     TEMP T8,
+     TEMP T0),
+    CONST 2))),
+ CONST 0)
+MOVE(
+ TEMP T19,
+ MEM(
+  BINOP(MINUS,
+   MEM(
+    BINOP(PLUS,
+     CONST 0,
+     TEMP fp)),
+   CONST 20)))
+EXP(
+ CALL(
+  NAME _checkIndexArray,
+   TEMP T19,
+   BINOP(MINUS,
+    BINOP(PLUS,
+     TEMP T8,
+     CONST 7),
+    TEMP T0)))
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP T19,
+   BINOP(LSHIFT,
+    BINOP(MINUS,
+     BINOP(PLUS,
+      TEMP T8,
+      CONST 7),
+     TEMP T0),
+    CONST 2))),
+ CONST 0)
+JUMP( NAME L21)
+LABEL L32
+
+Fragment "tigermain":
+LABEL L36
+MOVE(
+ MEM(
+  BINOP(PLUS,
+   TEMP fp,
+   CONST 0)),
+ TEMP r0)
+MOVE(
+ MEM(
+  BINOP(MINUS,
+   TEMP fp,
+   CONST 4)),
+ CONST 8)
+MOVE(
+ TEMP T22,
+ BINOP(MINUS,
+  TEMP fp,
+  CONST 8))
+MOVE(
+ TEMP T21,
+ CALL(
+  NAME _initArray,
+   MEM(
+    BINOP(MINUS,
+     TEMP fp,
+     CONST 4)),
+   CONST 0))
+MOVE(
+ MEM(
+  TEMP T22),
+ TEMP T21)
+MOVE(
+ TEMP T24,
+ BINOP(MINUS,
+  TEMP fp,
+  CONST 12))
+MOVE(
+ TEMP T23,
+ CALL(
+  NAME _initArray,
+   MEM(
+    BINOP(MINUS,
+     TEMP fp,
+     CONST 4)),
+   CONST 0))
+MOVE(
+ MEM(
+  TEMP T24),
+ TEMP T23)
+MOVE(
+ TEMP T26,
+ BINOP(MINUS,
+  TEMP fp,
+  CONST 16))
+MOVE(
+ TEMP T25,
+ CALL(
+  NAME _initArray,
+   BINOP(MINUS,
+    BINOP(PLUS,
+     MEM(
+      BINOP(MINUS,
+       TEMP fp,
+       CONST 4)),
+     MEM(
+      BINOP(MINUS,
+       TEMP fp,
+       CONST 4))),
+    CONST 1),
+   CONST 0))
+MOVE(
+ MEM(
+  TEMP T26),
+ TEMP T25)
+MOVE(
+ TEMP T28,
+ BINOP(MINUS,
+  TEMP fp,
+  CONST 20))
+MOVE(
+ TEMP T27,
+ CALL(
+  NAME _initArray,
+   BINOP(MINUS,
+    BINOP(PLUS,
+     MEM(
+      BINOP(MINUS,
+       TEMP fp,
+       CONST 4)),
+     MEM(
+      BINOP(MINUS,
+       TEMP fp,
+       CONST 4))),
+    CONST 1),
+   CONST 0))
+MOVE(
+ MEM(
+  TEMP T28),
+ TEMP T27)
+EXP(
+ CALL(
+  NAME L1,
+   TEMP fp,
+   CONST 0))
+JUMP( NAME L35)
+LABEL L35
+
+
+
+**********  CÓDIGO SIN COLOREAR: **********  
+
+L0:
+L29:
+str     r0, [fp, #0]
+ldr     T31, [fp, #0]
+ldr     T30, [T31, #-4]
+mov T32, #1
+sub     T29, T30, T32
+mov     T7, T29
+movw   T33, #:lower16:0
+movt   T33, #:upper16:0
+mov     T1, T33
+L13:
+cmp     T1, T7
+ble L14
+L2:
+movw    T34, #:lower16:L16
+movt    T34, #:upper16:L16
+mov     r0, T34
+bl      print
+b       L28
+L15:
+mov T36, #1
+add     T35, T1, T36
+mov     T1, T35
+b       L13
+L14:
+ldr     T39, [fp, #0]
+ldr     T38, [T39, #-4]
+mov T40, #1
+sub     T37, T38, T40
+mov     T6, T37
+movw   T41, #:lower16:0
+movt   T41, #:upper16:0
+mov     T2, T41
+L9:
+cmp     T2, T6
+ble L10
+L3:
+movw    T42, #:lower16:L12
+movt    T42, #:upper16:L12
+mov     r0, T42
+bl      print
+cmp     T1, T7
+beq L2
+L30:
+b       L15
+L11:
+mov T44, #1
+add     T43, T2, T44
+mov     T2, T43
+b       L9
+L10:
+ldr     T46, [fp, #0]
+ldr     T45, [T46, #-12]
+mov     T3, T45
+mov     r0, T3
+mov     r1, T1
+bl      _checkIndexArray
+mov T50, #2
+lsl     T49, T1, T50
+add     T48, T3, T49
+ldr    T47, [T48]
+cmp     T47, T2
+beq L6
+L7:
+movw    T51, #:lower16:L5
+movt    T51, #:upper16:L5
+mov     T4, T51
+L8:
+mov     T5, T4
+mov     r0, T5
+bl      print
+cmp     T2, T6
+beq L3
+L31:
+b       L11
+L6:
+movw    T52, #:lower16:L4
+movt    T52, #:upper16:L4
+mov     T4, T52
+b       L8
+L28:
+
+L1:
+L33:
+str     r0, [fp, #0]
+mov     T0, r1
+ldr     T54, [fp, #0]
+ldr     T53, [T54, #-4]
+cmp     T0, T53
+beq L25
+L26:
+ldr     T57, [fp, #0]
+ldr     T56, [T57, #-4]
+mov T58, #1
+sub     T55, T56, T58
+mov     T20, T55
+movw   T59, #:lower16:0
+movt   T59, #:upper16:0
+mov     T8, T59
+L22:
+cmp     T8, T20
+ble L23
+L17:
+L27:
+b       L32
+L25:
+ldr     T60, [fp, #0]
+mov     r0, T60
+bl      L0
+b       L27
+L24:
+mov T62, #1
+add     T61, T8, T62
+mov     T8, T61
+b       L22
+L23:
+ldr     T64, [fp, #0]
+ldr     T63, [T64, #-8]
+mov     T9, T63
+mov     r0, T9
+mov     r1, T8
+bl      _checkIndexArray
+mov T68, #2
+lsl     T67, T8, T68
+add     T66, T9, T67
+ldr    T65, [T66]
+movw   T69, #:lower16:0
+movt   T69, #:upper16:0
+cmp     T65, T69
+beq L18
+L21:
+cmp     T8, T20
+beq L17
+L34:
+b       L24
+L18:
+ldr     T71, [fp, #0]
+ldr     T70, [T71, #-16]
+mov     T10, T70
+add     T72, T8, T0
+mov     r0, T10
+mov     r1, T72
+bl      _checkIndexArray
+add     T76, T8, T0
+mov T77, #2
+lsl     T75, T76, T77
+add     T74, T10, T75
+ldr    T73, [T74]
+movw   T78, #:lower16:0
+movt   T78, #:upper16:0
+cmp     T73, T78
+bne L21
+L19:
+ldr     T80, [fp, #0]
+ldr     T79, [T80, #-20]
+mov     T11, T79
+mov T83, #7
+add     T82, T8, T83
+sub     T81, T82, T0
+mov     r0, T11
+mov     r1, T81
+bl      _checkIndexArray
+mov T89, #7
+add     T88, T8, T89
+sub     T87, T88, T0
+mov T90, #2
+lsl     T86, T87, T90
+add     T85, T11, T86
+ldr    T84, [T85]
+movw   T91, #:lower16:0
+movt   T91, #:upper16:0
+cmp     T84, T91
+bne L21
+L20:
+ldr     T93, [fp, #0]
+ldr     T92, [T93, #-8]
+mov     T12, T92
+mov     r0, T12
+mov     r1, T8
+bl      _checkIndexArray
+mov T94, #1
+mov T96, #2
+lsl     T95, T8, T96
+str     T94, [T12, T95]
+ldr     T98, [fp, #0]
+ldr     T97, [T98, #-16]
+mov     T13, T97
+add     T99, T8, T0
+mov     r0, T13
+mov     r1, T99
+bl      _checkIndexArray
+mov T100, #1
+add     T102, T8, T0
+mov T103, #2
+lsl     T101, T102, T103
+str     T100, [T13, T101]
+ldr     T105, [fp, #0]
+ldr     T104, [T105, #-20]
+mov     T14, T104
+mov T108, #7
+add     T107, T8, T108
+sub     T106, T107, T0
+mov     r0, T14
+mov     r1, T106
+bl      _checkIndexArray
+mov T109, #1
+mov T113, #7
+add     T112, T8, T113
+sub     T111, T112, T0
+mov T114, #2
+lsl     T110, T111, T114
+str     T109, [T14, T110]
+ldr     T116, [fp, #0]
+ldr     T115, [T116, #-12]
+mov     T15, T115
+mov     r0, T15
+mov     r1, T0
+bl      _checkIndexArray
+mov T118, #2
+lsl     T117, T0, T118
+str     T8, [T15, T117]
+mov T120, #1
+add     T119, T0, T120
+mov     T16, T119
+ldr     T121, [fp, #0]
+mov     r0, T121
+mov     r1, T16
+bl      L1
+ldr     T123, [fp, #0]
+ldr     T122, [T123, #-8]
+mov     T17, T122
+mov     r0, T17
+mov     r1, T8
+bl      _checkIndexArray
+movw   T124, #:lower16:0
+movt   T124, #:upper16:0
+mov T126, #2
+lsl     T125, T8, T126
+str     T124, [T17, T125]
+ldr     T128, [fp, #0]
+ldr     T127, [T128, #-16]
+mov     T18, T127
+add     T129, T8, T0
+mov     r0, T18
+mov     r1, T129
+bl      _checkIndexArray
+movw   T130, #:lower16:0
+movt   T130, #:upper16:0
+add     T132, T8, T0
+mov T133, #2
+lsl     T131, T132, T133
+str     T130, [T18, T131]
+ldr     T135, [fp, #0]
+ldr     T134, [T135, #-20]
+mov     T19, T134
+mov T138, #7
+add     T137, T8, T138
+sub     T136, T137, T0
+mov     r0, T19
+mov     r1, T136
+bl      _checkIndexArray
+movw   T139, #:lower16:0
+movt   T139, #:upper16:0
+mov T143, #7
+add     T142, T8, T143
+sub     T141, T142, T0
+mov T144, #2
+lsl     T140, T141, T144
+str     T139, [T19, T140]
+b       L21
+L32:
+
+tigermain:
+L36:
+str     r0, [fp, #0]
+mov T145, #8
+str     T145, [fp, #-4]
+mov T147, #8
+sub     T146, fp, T147
+mov     T22, T146
+ldr     T148, [fp, #-4]
+movw   T149, #:lower16:0
+movt   T149, #:upper16:0
+mov     r0, T148
+mov     r1, T149
+bl      _initArray
+mov     T21, r0
+str     T21,[T22]
+mov T151, #12
+sub     T150, fp, T151
+mov     T24, T150
+ldr     T152, [fp, #-4]
+movw   T153, #:lower16:0
+movt   T153, #:upper16:0
+mov     r0, T152
+mov     r1, T153
+bl      _initArray
+mov     T23, r0
+str     T23,[T24]
+mov T155, #16
+sub     T154, fp, T155
+mov     T26, T154
+ldr     T158, [fp, #-4]
+ldr     T159, [fp, #-4]
+add     T157, T158, T159
+mov T160, #1
+sub     T156, T157, T160
+movw   T161, #:lower16:0
+movt   T161, #:upper16:0
+mov     r0, T156
+mov     r1, T161
+bl      _initArray
+mov     T25, r0
+str     T25,[T26]
+mov T163, #20
+sub     T162, fp, T163
+mov     T28, T162
+ldr     T166, [fp, #-4]
+ldr     T167, [fp, #-4]
+add     T165, T166, T167
+mov T168, #1
+sub     T164, T165, T168
+movw   T169, #:lower16:0
+movt   T169, #:upper16:0
+mov     r0, T164
+mov     r1, T169
+bl      _initArray
+mov     T27, r0
+str     T27,[T28]
+movw   T170, #:lower16:0
+movt   T170, #:upper16:0
+mov     r0, fp
+mov     r1, T170
+bl      L1
+b       L35
+L35:
+
+
+
+
+********** COLOR: **********  
+
+
+
+flow graph:
+
+Nodos : 
+n0: L29:
+def: use: notMove
+n1: str     r0, [fp, #0]
+def: use: r0,fp,notMove
+n2: ldr     T31, [fp, #0]
+def: T31,use: fp,notMove
+n3: ldr     T30, [T31, #-4]
+def: T30,use: T31,notMove
+n4: mov T32, #1
+def: T32,use: notMove
+n5: sub     T29, T30, T32
+def: T29,use: T30,T32,notMove
+n6: mov     T7, T29
+def: T7,use: T29,isMove
+n7: movw   T33, #:lower16:0
+movt   T33, #:upper16:0
+def: T33,use: notMove
+n8: mov     T1, T33
+def: T1,use: T33,isMove
+n9: L13:
+def: use: notMove
+n10: cmp     T1, T7
+ble L14
+def: use: T1,T7,notMove
+n11: L2:
+def: use: notMove
+n12: movw    T34, #:lower16:L16
+movt    T34, #:upper16:L16
+def: T34,use: notMove
+n13: mov     r0, T34
+def: r0,use: T34,isMove
+n14: bl      print
+def: r0,r1,r2,r3,use: r0,notMove
+n15: b       L28
+def: use: notMove
+n16: L15:
+def: use: notMove
+n17: mov T36, #1
+def: T36,use: notMove
+n18: add     T35, T1, T36
+def: T35,use: T1,T36,notMove
+n19: mov     T1, T35
+def: T1,use: T35,isMove
+n20: b       L13
+def: use: notMove
+n21: L14:
+def: use: notMove
+n22: ldr     T39, [fp, #0]
+def: T39,use: fp,notMove
+n23: ldr     T38, [T39, #-4]
+def: T38,use: T39,notMove
+n24: mov T40, #1
+def: T40,use: notMove
+n25: sub     T37, T38, T40
+def: T37,use: T38,T40,notMove
+n26: mov     T6, T37
+def: T6,use: T37,isMove
+n27: movw   T41, #:lower16:0
+movt   T41, #:upper16:0
+def: T41,use: notMove
+n28: mov     T2, T41
+def: T2,use: T41,isMove
+n29: L9:
+def: use: notMove
+n30: cmp     T2, T6
+ble L10
+def: use: T2,T6,notMove
+n31: L3:
+def: use: notMove
+n32: movw    T42, #:lower16:L12
+movt    T42, #:upper16:L12
+def: T42,use: notMove
+n33: mov     r0, T42
+def: r0,use: T42,isMove
+n34: bl      print
+def: r0,r1,r2,r3,use: r0,notMove
+n35: cmp     T1, T7
+beq L2
+def: use: T1,T7,notMove
+n36: L30:
+def: use: notMove
+n37: b       L15
+def: use: notMove
+n38: L11:
+def: use: notMove
+n39: mov T44, #1
+def: T44,use: notMove
+n40: add     T43, T2, T44
+def: T43,use: T2,T44,notMove
+n41: mov     T2, T43
+def: T2,use: T43,isMove
+n42: b       L9
+def: use: notMove
+n43: L10:
+def: use: notMove
+n44: ldr     T46, [fp, #0]
+def: T46,use: fp,notMove
+n45: ldr     T45, [T46, #-12]
+def: T45,use: T46,notMove
+n46: mov     T3, T45
+def: T3,use: T45,isMove
+n47: mov     r0, T3
+def: r0,use: T3,isMove
+n48: mov     r1, T1
+def: r1,use: T1,isMove
+n49: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n50: mov T50, #2
+def: T50,use: notMove
+n51: lsl     T49, T1, T50
+def: T49,use: T1,T50,notMove
+n52: add     T48, T3, T49
+def: T48,use: T3,T49,notMove
+n53: ldr    T47, [T48]
+def: T47,use: T48,notMove
+n54: cmp     T47, T2
+beq L6
+def: use: T47,T2,notMove
+n55: L7:
+def: use: notMove
+n56: movw    T51, #:lower16:L5
+movt    T51, #:upper16:L5
+def: T51,use: notMove
+n57: mov     T4, T51
+def: T4,use: T51,isMove
+n58: L8:
+def: use: notMove
+n59: mov     T5, T4
+def: T5,use: T4,isMove
+n60: mov     r0, T5
+def: r0,use: T5,isMove
+n61: bl      print
+def: r0,r1,r2,r3,use: r0,notMove
+n62: cmp     T2, T6
+beq L3
+def: use: T2,T6,notMove
+n63: L31:
+def: use: notMove
+n64: b       L11
+def: use: notMove
+n65: L6:
+def: use: notMove
+n66: movw    T52, #:lower16:L4
+movt    T52, #:upper16:L4
+def: T52,use: notMove
+n67: mov     T4, T52
+def: T4,use: T52,isMove
+n68: b       L8
+def: use: notMove
+n69: L28:
+def: use: notMove
+n70: def: use: r0,notMove
+
+
+Aristas : 
+n0 --> n1
+n1 --> n2
+n2 --> n3
+n3 --> n4
+n4 --> n5
+n5 --> n6
+n6 --> n7
+n7 --> n8
+n8 --> n9
+n9 --> n10
+n10 --> n11
+n10 --> n21
+n11 --> n12
+n12 --> n13
+n13 --> n14
+n14 --> n15
+n15 --> n69
+n16 --> n17
+n17 --> n18
+n18 --> n19
+n19 --> n20
+n20 --> n9
+n21 --> n22
+n22 --> n23
+n23 --> n24
+n24 --> n25
+n25 --> n26
+n26 --> n27
+n27 --> n28
+n28 --> n29
+n29 --> n30
+n30 --> n31
+n30 --> n43
+n31 --> n32
+n32 --> n33
+n33 --> n34
+n34 --> n35
+n35 --> n36
+n35 --> n11
+n36 --> n37
+n37 --> n16
+n38 --> n39
+n39 --> n40
+n40 --> n41
+n41 --> n42
+n42 --> n29
+n43 --> n44
+n44 --> n45
+n45 --> n46
+n46 --> n47
+n47 --> n48
+n48 --> n49
+n49 --> n50
+n50 --> n51
+n51 --> n52
+n52 --> n53
+n53 --> n54
+n54 --> n55
+n54 --> n65
+n55 --> n56
+n56 --> n57
+n57 --> n58
+n58 --> n59
+n59 --> n60
+n60 --> n61
+n61 --> n62
+n62 --> n63
+n62 --> n31
+n63 --> n64
+n64 --> n38
+n65 --> n66
+n66 --> n67
+n67 --> n68
+n68 --> n58
+n69 --> n70
+
+
+
+
+
+liveout:
+
+n0-> fp,r0,
+n1-> fp,
+n2-> T31,fp,
+n3-> T30,fp,
+n4-> T30,T32,fp,
+n5-> T29,fp,
+n6-> T7,fp,
+n7-> T33,T7,fp,
+n8-> T1,T7,fp,
+n9-> T1,T7,fp,
+n10-> T1,T7,fp,
+n11-> 
+n12-> T34,
+n13-> r0,
+n14-> r0,
+n15-> r0,
+n16-> T1,T7,fp,
+n17-> T1,T36,T7,fp,
+n18-> T35,T7,fp,
+n19-> T1,T7,fp,
+n20-> T1,T7,fp,
+n21-> T1,T7,fp,
+n22-> T1,T39,T7,fp,
+n23-> T1,T38,T7,fp,
+n24-> T1,T38,T40,T7,fp,
+n25-> T1,T37,T7,fp,
+n26-> T1,T6,T7,fp,
+n27-> T1,T41,T6,T7,fp,
+n28-> T1,T2,T6,T7,fp,
+n29-> T1,T2,T6,T7,fp,
+n30-> T1,T2,T6,T7,fp,
+n31-> T1,T7,fp,
+n32-> T1,T42,T7,fp,
+n33-> T1,T7,fp,r0,
+n34-> T1,T7,fp,
+n35-> T1,T7,fp,
+n36-> T1,T7,fp,
+n37-> T1,T7,fp,
+n38-> T1,T2,T6,T7,fp,
+n39-> T1,T2,T44,T6,T7,fp,
+n40-> T1,T43,T6,T7,fp,
+n41-> T1,T2,T6,T7,fp,
+n42-> T1,T2,T6,T7,fp,
+n43-> T1,T2,T6,T7,fp,
+n44-> T1,T2,T46,T6,T7,fp,
+n45-> T1,T2,T45,T6,T7,fp,
+n46-> T1,T2,T3,T6,T7,fp,
+n47-> T1,T2,T3,T6,T7,fp,r0,
+n48-> T1,T2,T3,T6,T7,fp,r0,r1,
+n49-> T1,T2,T3,T6,T7,fp,
+n50-> T1,T2,T3,T50,T6,T7,fp,
+n51-> T1,T2,T3,T49,T6,T7,fp,
+n52-> T1,T2,T48,T6,T7,fp,
+n53-> T1,T2,T47,T6,T7,fp,
+n54-> T1,T2,T6,T7,fp,
+n55-> T1,T2,T6,T7,fp,
+n56-> T1,T2,T51,T6,T7,fp,
+n57-> T1,T2,T4,T6,T7,fp,
+n58-> T1,T2,T4,T6,T7,fp,
+n59-> T1,T2,T5,T6,T7,fp,
+n60-> T1,T2,T6,T7,fp,r0,
+n61-> T1,T2,T6,T7,fp,
+n62-> T1,T2,T6,T7,fp,
+n63-> T1,T2,T6,T7,fp,
+n64-> T1,T2,T6,T7,fp,
+n65-> T1,T2,T6,T7,fp,
+n66-> T1,T2,T52,T6,T7,fp,
+n67-> T1,T2,T4,T6,T7,fp,
+n68-> T1,T2,T4,T6,T7,fp,
+n69-> r0,
+n70-> 
+
+
+interfence graph:
+
+Nodos : 
+T31
+fp
+T30
+T32
+T29
+T7
+T33
+T1
+T34
+r0
+r1
+r2
+r3
+T36
+T35
+T39
+T38
+T40
+T37
+T6
+T41
+T2
+T42
+T44
+T43
+T46
+T45
+T3
+T50
+T49
+T48
+T47
+T51
+T4
+T5
+T52
+
+
+ Aristas : 
+T31 --> fp
+T31 --> T31
+T30 --> fp
+T30 --> T30
+T32 --> fp
+T32 --> T32
+T32 --> T30
+T29 --> fp
+T29 --> T29
+T7 --> fp
+T7 --> T7
+T33 --> fp
+T33 --> T7
+T33 --> T33
+T1 --> fp
+T1 --> T7
+T1 --> T1
+T1 --> fp
+T1 --> T7
+T1 --> T1
+T34 --> T34
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T2
+r0 --> T1
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T2
+r0 --> T1
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T3
+r0 --> T2
+r0 --> T1
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T2
+r0 --> T1
+r0 --> fp
+r0 --> T7
+r0 --> T1
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T1
+r0 --> r0
+r0 --> r0
+r1 --> fp
+r1 --> T7
+r1 --> T6
+r1 --> T2
+r1 --> T1
+r1 --> fp
+r1 --> T7
+r1 --> T6
+r1 --> T3
+r1 --> T2
+r1 --> T1
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T7
+r1 --> T6
+r1 --> T3
+r1 --> T2
+r1 --> fp
+r1 --> T7
+r1 --> T1
+r1 --> r0
+r2 --> fp
+r2 --> T7
+r2 --> T6
+r2 --> T2
+r2 --> T1
+r2 --> fp
+r2 --> T7
+r2 --> T6
+r2 --> T3
+r2 --> T2
+r2 --> T1
+r2 --> fp
+r2 --> T7
+r2 --> T1
+r2 --> r0
+r3 --> fp
+r3 --> T7
+r3 --> T6
+r3 --> T2
+r3 --> T1
+r3 --> fp
+r3 --> T7
+r3 --> T6
+r3 --> T3
+r3 --> T2
+r3 --> T1
+r3 --> fp
+r3 --> T7
+r3 --> T1
+r3 --> r0
+T36 --> fp
+T36 --> T7
+T36 --> T36
+T36 --> T1
+T35 --> fp
+T35 --> T7
+T35 --> T35
+T39 --> fp
+T39 --> T7
+T39 --> T39
+T39 --> T1
+T38 --> fp
+T38 --> T7
+T38 --> T38
+T38 --> T1
+T40 --> fp
+T40 --> T7
+T40 --> T40
+T40 --> T38
+T40 --> T1
+T37 --> fp
+T37 --> T7
+T37 --> T37
+T37 --> T1
+T6 --> fp
+T6 --> T7
+T6 --> T6
+T6 --> T1
+T41 --> fp
+T41 --> T7
+T41 --> T6
+T41 --> T41
+T41 --> T1
+T2 --> fp
+T2 --> T7
+T2 --> T6
+T2 --> T2
+T2 --> T1
+T2 --> fp
+T2 --> T7
+T2 --> T6
+T2 --> T2
+T2 --> T1
+T42 --> fp
+T42 --> T7
+T42 --> T42
+T42 --> T1
+T44 --> fp
+T44 --> T7
+T44 --> T6
+T44 --> T44
+T44 --> T2
+T44 --> T1
+T43 --> fp
+T43 --> T7
+T43 --> T6
+T43 --> T43
+T43 --> T1
+T46 --> fp
+T46 --> T7
+T46 --> T6
+T46 --> T46
+T46 --> T2
+T46 --> T1
+T45 --> fp
+T45 --> T7
+T45 --> T6
+T45 --> T45
+T45 --> T2
+T45 --> T1
+T3 --> fp
+T3 --> T7
+T3 --> T6
+T3 --> T3
+T3 --> T2
+T3 --> T1
+T50 --> fp
+T50 --> T7
+T50 --> T6
+T50 --> T50
+T50 --> T3
+T50 --> T2
+T50 --> T1
+T49 --> fp
+T49 --> T7
+T49 --> T6
+T49 --> T49
+T49 --> T3
+T49 --> T2
+T49 --> T1
+T48 --> fp
+T48 --> T7
+T48 --> T6
+T48 --> T48
+T48 --> T2
+T48 --> T1
+T47 --> fp
+T47 --> T7
+T47 --> T6
+T47 --> T47
+T47 --> T2
+T47 --> T1
+T51 --> fp
+T51 --> T7
+T51 --> T6
+T51 --> T51
+T51 --> T2
+T51 --> T1
+T4 --> fp
+T4 --> T7
+T4 --> T6
+T4 --> T4
+T4 --> T2
+T4 --> T1
+T4 --> fp
+T4 --> T7
+T4 --> T6
+T4 --> T4
+T4 --> T2
+T4 --> T1
+T5 --> fp
+T5 --> T7
+T5 --> T6
+T5 --> T5
+T5 --> T2
+T5 --> T1
+T52 --> fp
+T52 --> T7
+T52 --> T6
+T52 --> T52
+T52 --> T2
+T52 --> T1
+
+
+
+
+
+initial:
+T1
+T2
+T29
+T3
+T30
+T31
+T32
+T33
+T34
+T35
+T36
+T37
+T38
+T39
+T4
+T40
+T41
+T42
+T43
+T44
+T45
+T46
+T47
+T48
+T49
+T5
+T50
+T51
+T52
+T6
+T7
+
+
+precolored:
+r0
+r1
+r10
+r2
+r3
+r4
+r5
+r6
+r7
+r8
+r9
+
+
+simplifyWorklist:
+T30
+T31
+T32
+T36
+T38
+T39
+T40
+T44
+T46
+T47
+T48
+T49
+T50
+
+
+freezeWorklist:
+T29
+T3
+T33
+T34
+T35
+T37
+T4
+T41
+T42
+T43
+T45
+T5
+T51
+T52
+
+
+spillWorklist:
+T1
+T2
+T6
+T7
+
+
+Before loop...
+
+
+After loop...
+
+
+color:
+fp->fp
+lr->lr
+r10->r10
+r0->r0
+r1->r1
+r2->r2
+r3->r3
+r4->r4
+r5->r5
+r6->r6
+r7->r7
+r8->r8
+r9->r9
+pc->pc
+sp->sp
+T29->r5
+T30->r10
+T1->r10
+T31->r10
+T2->r6
+T32->r1
+T3->r4
+T4->r0
+T33->r10
+T5->r0
+T34->r0
+T35->r10
+T6->r7
+T36->r4
+T7->r5
+T37->r7
+T38->r4
+T39->r4
+T40->r3
+T41->r6
+T42->r0
+T43->r6
+T44->r4
+T45->r4
+T46->r4
+T47->r4
+T48->r4
+T49->r3
+T50->r3
+T51->r0
+T52->r0
+
+
+spilledNodes:
+
+
+********** END COLOR: **********  
+
+********** COLOR: **********  
+
+
+
+flow graph:
+
+Nodos : 
+n0: L33:
+def: use: notMove
+n1: str     r0, [fp, #0]
+def: use: r0,fp,notMove
+n2: mov     T0, r1
+def: T0,use: r1,isMove
+n3: ldr     T54, [fp, #0]
+def: T54,use: fp,notMove
+n4: ldr     T53, [T54, #-4]
+def: T53,use: T54,notMove
+n5: cmp     T0, T53
+beq L25
+def: use: T0,T53,notMove
+n6: L26:
+def: use: notMove
+n7: ldr     T57, [fp, #0]
+def: T57,use: fp,notMove
+n8: ldr     T56, [T57, #-4]
+def: T56,use: T57,notMove
+n9: mov T58, #1
+def: T58,use: notMove
+n10: sub     T55, T56, T58
+def: T55,use: T56,T58,notMove
+n11: mov     T20, T55
+def: T20,use: T55,isMove
+n12: movw   T59, #:lower16:0
+movt   T59, #:upper16:0
+def: T59,use: notMove
+n13: mov     T8, T59
+def: T8,use: T59,isMove
+n14: L22:
+def: use: notMove
+n15: cmp     T8, T20
+ble L23
+def: use: T8,T20,notMove
+n16: L17:
+def: use: notMove
+n17: L27:
+def: use: notMove
+n18: b       L32
+def: use: notMove
+n19: L25:
+def: use: notMove
+n20: ldr     T60, [fp, #0]
+def: T60,use: fp,notMove
+n21: mov     r0, T60
+def: r0,use: T60,isMove
+n22: bl      L0
+def: r0,r1,r2,r3,use: r0,notMove
+n23: b       L27
+def: use: notMove
+n24: L24:
+def: use: notMove
+n25: mov T62, #1
+def: T62,use: notMove
+n26: add     T61, T8, T62
+def: T61,use: T8,T62,notMove
+n27: mov     T8, T61
+def: T8,use: T61,isMove
+n28: b       L22
+def: use: notMove
+n29: L23:
+def: use: notMove
+n30: ldr     T64, [fp, #0]
+def: T64,use: fp,notMove
+n31: ldr     T63, [T64, #-8]
+def: T63,use: T64,notMove
+n32: mov     T9, T63
+def: T9,use: T63,isMove
+n33: mov     r0, T9
+def: r0,use: T9,isMove
+n34: mov     r1, T8
+def: r1,use: T8,isMove
+n35: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n36: mov T68, #2
+def: T68,use: notMove
+n37: lsl     T67, T8, T68
+def: T67,use: T8,T68,notMove
+n38: add     T66, T9, T67
+def: T66,use: T9,T67,notMove
+n39: ldr    T65, [T66]
+def: T65,use: T66,notMove
+n40: movw   T69, #:lower16:0
+movt   T69, #:upper16:0
+def: T69,use: notMove
+n41: cmp     T65, T69
+beq L18
+def: use: T65,T69,notMove
+n42: L21:
+def: use: notMove
+n43: cmp     T8, T20
+beq L17
+def: use: T8,T20,notMove
+n44: L34:
+def: use: notMove
+n45: b       L24
+def: use: notMove
+n46: L18:
+def: use: notMove
+n47: ldr     T71, [fp, #0]
+def: T71,use: fp,notMove
+n48: ldr     T70, [T71, #-16]
+def: T70,use: T71,notMove
+n49: mov     T10, T70
+def: T10,use: T70,isMove
+n50: add     T72, T8, T0
+def: T72,use: T8,T0,notMove
+n51: mov     r0, T10
+def: r0,use: T10,isMove
+n52: mov     r1, T72
+def: r1,use: T72,isMove
+n53: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n54: add     T76, T8, T0
+def: T76,use: T8,T0,notMove
+n55: mov T77, #2
+def: T77,use: notMove
+n56: lsl     T75, T76, T77
+def: T75,use: T76,T77,notMove
+n57: add     T74, T10, T75
+def: T74,use: T10,T75,notMove
+n58: ldr    T73, [T74]
+def: T73,use: T74,notMove
+n59: movw   T78, #:lower16:0
+movt   T78, #:upper16:0
+def: T78,use: notMove
+n60: cmp     T73, T78
+bne L21
+def: use: T73,T78,notMove
+n61: L19:
+def: use: notMove
+n62: ldr     T80, [fp, #0]
+def: T80,use: fp,notMove
+n63: ldr     T79, [T80, #-20]
+def: T79,use: T80,notMove
+n64: mov     T11, T79
+def: T11,use: T79,isMove
+n65: mov T83, #7
+def: T83,use: notMove
+n66: add     T82, T8, T83
+def: T82,use: T8,T83,notMove
+n67: sub     T81, T82, T0
+def: T81,use: T82,T0,notMove
+n68: mov     r0, T11
+def: r0,use: T11,isMove
+n69: mov     r1, T81
+def: r1,use: T81,isMove
+n70: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n71: mov T89, #7
+def: T89,use: notMove
+n72: add     T88, T8, T89
+def: T88,use: T8,T89,notMove
+n73: sub     T87, T88, T0
+def: T87,use: T88,T0,notMove
+n74: mov T90, #2
+def: T90,use: notMove
+n75: lsl     T86, T87, T90
+def: T86,use: T87,T90,notMove
+n76: add     T85, T11, T86
+def: T85,use: T11,T86,notMove
+n77: ldr    T84, [T85]
+def: T84,use: T85,notMove
+n78: movw   T91, #:lower16:0
+movt   T91, #:upper16:0
+def: T91,use: notMove
+n79: cmp     T84, T91
+bne L21
+def: use: T84,T91,notMove
+n80: L20:
+def: use: notMove
+n81: ldr     T93, [fp, #0]
+def: T93,use: fp,notMove
+n82: ldr     T92, [T93, #-8]
+def: T92,use: T93,notMove
+n83: mov     T12, T92
+def: T12,use: T92,isMove
+n84: mov     r0, T12
+def: r0,use: T12,isMove
+n85: mov     r1, T8
+def: r1,use: T8,isMove
+n86: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n87: mov T94, #1
+def: T94,use: notMove
+n88: mov T96, #2
+def: T96,use: notMove
+n89: lsl     T95, T8, T96
+def: T95,use: T8,T96,notMove
+n90: str     T94, [T12, T95]
+def: use: T94,T12,T95,notMove
+n91: ldr     T98, [fp, #0]
+def: T98,use: fp,notMove
+n92: ldr     T97, [T98, #-16]
+def: T97,use: T98,notMove
+n93: mov     T13, T97
+def: T13,use: T97,isMove
+n94: add     T99, T8, T0
+def: T99,use: T8,T0,notMove
+n95: mov     r0, T13
+def: r0,use: T13,isMove
+n96: mov     r1, T99
+def: r1,use: T99,isMove
+n97: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n98: mov T100, #1
+def: T100,use: notMove
+n99: add     T102, T8, T0
+def: T102,use: T8,T0,notMove
+n100: mov T103, #2
+def: T103,use: notMove
+n101: lsl     T101, T102, T103
+def: T101,use: T102,T103,notMove
+n102: str     T100, [T13, T101]
+def: use: T100,T13,T101,notMove
+n103: ldr     T105, [fp, #0]
+def: T105,use: fp,notMove
+n104: ldr     T104, [T105, #-20]
+def: T104,use: T105,notMove
+n105: mov     T14, T104
+def: T14,use: T104,isMove
+n106: mov T108, #7
+def: T108,use: notMove
+n107: add     T107, T8, T108
+def: T107,use: T8,T108,notMove
+n108: sub     T106, T107, T0
+def: T106,use: T107,T0,notMove
+n109: mov     r0, T14
+def: r0,use: T14,isMove
+n110: mov     r1, T106
+def: r1,use: T106,isMove
+n111: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n112: mov T109, #1
+def: T109,use: notMove
+n113: mov T113, #7
+def: T113,use: notMove
+n114: add     T112, T8, T113
+def: T112,use: T8,T113,notMove
+n115: sub     T111, T112, T0
+def: T111,use: T112,T0,notMove
+n116: mov T114, #2
+def: T114,use: notMove
+n117: lsl     T110, T111, T114
+def: T110,use: T111,T114,notMove
+n118: str     T109, [T14, T110]
+def: use: T109,T14,T110,notMove
+n119: ldr     T116, [fp, #0]
+def: T116,use: fp,notMove
+n120: ldr     T115, [T116, #-12]
+def: T115,use: T116,notMove
+n121: mov     T15, T115
+def: T15,use: T115,isMove
+n122: mov     r0, T15
+def: r0,use: T15,isMove
+n123: mov     r1, T0
+def: r1,use: T0,isMove
+n124: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n125: mov T118, #2
+def: T118,use: notMove
+n126: lsl     T117, T0, T118
+def: T117,use: T0,T118,notMove
+n127: str     T8, [T15, T117]
+def: use: T8,T15,T117,notMove
+n128: mov T120, #1
+def: T120,use: notMove
+n129: add     T119, T0, T120
+def: T119,use: T0,T120,notMove
+n130: mov     T16, T119
+def: T16,use: T119,isMove
+n131: ldr     T121, [fp, #0]
+def: T121,use: fp,notMove
+n132: mov     r0, T121
+def: r0,use: T121,isMove
+n133: mov     r1, T16
+def: r1,use: T16,isMove
+n134: bl      L1
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n135: ldr     T123, [fp, #0]
+def: T123,use: fp,notMove
+n136: ldr     T122, [T123, #-8]
+def: T122,use: T123,notMove
+n137: mov     T17, T122
+def: T17,use: T122,isMove
+n138: mov     r0, T17
+def: r0,use: T17,isMove
+n139: mov     r1, T8
+def: r1,use: T8,isMove
+n140: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n141: movw   T124, #:lower16:0
+movt   T124, #:upper16:0
+def: T124,use: notMove
+n142: mov T126, #2
+def: T126,use: notMove
+n143: lsl     T125, T8, T126
+def: T125,use: T8,T126,notMove
+n144: str     T124, [T17, T125]
+def: use: T124,T17,T125,notMove
+n145: ldr     T128, [fp, #0]
+def: T128,use: fp,notMove
+n146: ldr     T127, [T128, #-16]
+def: T127,use: T128,notMove
+n147: mov     T18, T127
+def: T18,use: T127,isMove
+n148: add     T129, T8, T0
+def: T129,use: T8,T0,notMove
+n149: mov     r0, T18
+def: r0,use: T18,isMove
+n150: mov     r1, T129
+def: r1,use: T129,isMove
+n151: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n152: movw   T130, #:lower16:0
+movt   T130, #:upper16:0
+def: T130,use: notMove
+n153: add     T132, T8, T0
+def: T132,use: T8,T0,notMove
+n154: mov T133, #2
+def: T133,use: notMove
+n155: lsl     T131, T132, T133
+def: T131,use: T132,T133,notMove
+n156: str     T130, [T18, T131]
+def: use: T130,T18,T131,notMove
+n157: ldr     T135, [fp, #0]
+def: T135,use: fp,notMove
+n158: ldr     T134, [T135, #-20]
+def: T134,use: T135,notMove
+n159: mov     T19, T134
+def: T19,use: T134,isMove
+n160: mov T138, #7
+def: T138,use: notMove
+n161: add     T137, T8, T138
+def: T137,use: T8,T138,notMove
+n162: sub     T136, T137, T0
+def: T136,use: T137,T0,notMove
+n163: mov     r0, T19
+def: r0,use: T19,isMove
+n164: mov     r1, T136
+def: r1,use: T136,isMove
+n165: bl      _checkIndexArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n166: movw   T139, #:lower16:0
+movt   T139, #:upper16:0
+def: T139,use: notMove
+n167: mov T143, #7
+def: T143,use: notMove
+n168: add     T142, T8, T143
+def: T142,use: T8,T143,notMove
+n169: sub     T141, T142, T0
+def: T141,use: T142,T0,notMove
+n170: mov T144, #2
+def: T144,use: notMove
+n171: lsl     T140, T141, T144
+def: T140,use: T141,T144,notMove
+n172: str     T139, [T19, T140]
+def: use: T139,T19,T140,notMove
+n173: b       L21
+def: use: notMove
+n174: L32:
+def: use: notMove
+n175: def: use: r0,notMove
+
+
+Aristas : 
+n0 --> n1
+n1 --> n2
+n2 --> n3
+n3 --> n4
+n4 --> n5
+n5 --> n6
+n5 --> n19
+n6 --> n7
+n7 --> n8
+n8 --> n9
+n9 --> n10
+n10 --> n11
+n11 --> n12
+n12 --> n13
+n13 --> n14
+n14 --> n15
+n15 --> n16
+n15 --> n29
+n16 --> n17
+n17 --> n18
+n18 --> n174
+n19 --> n20
+n20 --> n21
+n21 --> n22
+n22 --> n23
+n23 --> n17
+n24 --> n25
+n25 --> n26
+n26 --> n27
+n27 --> n28
+n28 --> n14
+n29 --> n30
+n30 --> n31
+n31 --> n32
+n32 --> n33
+n33 --> n34
+n34 --> n35
+n35 --> n36
+n36 --> n37
+n37 --> n38
+n38 --> n39
+n39 --> n40
+n40 --> n41
+n41 --> n42
+n41 --> n46
+n42 --> n43
+n43 --> n44
+n43 --> n16
+n44 --> n45
+n45 --> n24
+n46 --> n47
+n47 --> n48
+n48 --> n49
+n49 --> n50
+n50 --> n51
+n51 --> n52
+n52 --> n53
+n53 --> n54
+n54 --> n55
+n55 --> n56
+n56 --> n57
+n57 --> n58
+n58 --> n59
+n59 --> n60
+n60 --> n61
+n60 --> n42
+n61 --> n62
+n62 --> n63
+n63 --> n64
+n64 --> n65
+n65 --> n66
+n66 --> n67
+n67 --> n68
+n68 --> n69
+n69 --> n70
+n70 --> n71
+n71 --> n72
+n72 --> n73
+n73 --> n74
+n74 --> n75
+n75 --> n76
+n76 --> n77
+n77 --> n78
+n78 --> n79
+n79 --> n80
+n79 --> n42
+n80 --> n81
+n81 --> n82
+n82 --> n83
+n83 --> n84
+n84 --> n85
+n85 --> n86
+n86 --> n87
+n87 --> n88
+n88 --> n89
+n89 --> n90
+n90 --> n91
+n91 --> n92
+n92 --> n93
+n93 --> n94
+n94 --> n95
+n95 --> n96
+n96 --> n97
+n97 --> n98
+n98 --> n99
+n99 --> n100
+n100 --> n101
+n101 --> n102
+n102 --> n103
+n103 --> n104
+n104 --> n105
+n105 --> n106
+n106 --> n107
+n107 --> n108
+n108 --> n109
+n109 --> n110
+n110 --> n111
+n111 --> n112
+n112 --> n113
+n113 --> n114
+n114 --> n115
+n115 --> n116
+n116 --> n117
+n117 --> n118
+n118 --> n119
+n119 --> n120
+n120 --> n121
+n121 --> n122
+n122 --> n123
+n123 --> n124
+n124 --> n125
+n125 --> n126
+n126 --> n127
+n127 --> n128
+n128 --> n129
+n129 --> n130
+n130 --> n131
+n131 --> n132
+n132 --> n133
+n133 --> n134
+n134 --> n135
+n135 --> n136
+n136 --> n137
+n137 --> n138
+n138 --> n139
+n139 --> n140
+n140 --> n141
+n141 --> n142
+n142 --> n143
+n143 --> n144
+n144 --> n145
+n145 --> n146
+n146 --> n147
+n147 --> n148
+n148 --> n149
+n149 --> n150
+n150 --> n151
+n151 --> n152
+n152 --> n153
+n153 --> n154
+n154 --> n155
+n155 --> n156
+n156 --> n157
+n157 --> n158
+n158 --> n159
+n159 --> n160
+n160 --> n161
+n161 --> n162
+n162 --> n163
+n163 --> n164
+n164 --> n165
+n165 --> n166
+n166 --> n167
+n167 --> n168
+n168 --> n169
+n169 --> n170
+n170 --> n171
+n171 --> n172
+n172 --> n173
+n173 --> n42
+n174 --> n175
+
+
+
+
+
+liveout:
+
+n0-> fp,r0,r1,
+n1-> fp,r0,r1,
+n2-> T0,fp,r0,
+n3-> T0,T54,fp,r0,
+n4-> T0,T53,fp,r0,
+n5-> T0,fp,r0,
+n6-> T0,fp,r0,
+n7-> T0,T57,fp,r0,
+n8-> T0,T56,fp,r0,
+n9-> T0,T56,T58,fp,r0,
+n10-> T0,T55,fp,r0,
+n11-> T0,T20,fp,r0,
+n12-> T0,T20,T59,fp,r0,
+n13-> T0,T20,T8,fp,r0,
+n14-> T0,T20,T8,fp,r0,
+n15-> T0,T20,T8,fp,r0,
+n16-> r0,
+n17-> r0,
+n18-> r0,
+n19-> fp,
+n20-> T60,
+n21-> r0,
+n22-> r0,
+n23-> r0,
+n24-> T0,T20,T8,fp,r0,
+n25-> T0,T20,T62,T8,fp,r0,
+n26-> T0,T20,T61,fp,r0,
+n27-> T0,T20,T8,fp,r0,
+n28-> T0,T20,T8,fp,r0,
+n29-> T0,T20,T8,fp,
+n30-> T0,T20,T64,T8,fp,
+n31-> T0,T20,T63,T8,fp,
+n32-> T0,T20,T8,T9,fp,
+n33-> T0,T20,T8,T9,fp,r0,
+n34-> T0,T20,T8,T9,fp,r0,r1,
+n35-> T0,T20,T8,T9,fp,r0,
+n36-> T0,T20,T68,T8,T9,fp,r0,
+n37-> T0,T20,T67,T8,T9,fp,r0,
+n38-> T0,T20,T66,T8,fp,r0,
+n39-> T0,T20,T65,T8,fp,r0,
+n40-> T0,T20,T65,T69,T8,fp,r0,
+n41-> T0,T20,T8,fp,r0,
+n42-> T0,T20,T8,fp,r0,
+n43-> T0,T20,T8,fp,r0,
+n44-> T0,T20,T8,fp,r0,
+n45-> T0,T20,T8,fp,r0,
+n46-> T0,T20,T8,fp,
+n47-> T0,T20,T71,T8,fp,
+n48-> T0,T20,T70,T8,fp,
+n49-> T0,T10,T20,T8,fp,
+n50-> T0,T10,T20,T72,T8,fp,
+n51-> T0,T10,T20,T72,T8,fp,r0,
+n52-> T0,T10,T20,T8,fp,r0,r1,
+n53-> T0,T10,T20,T8,fp,r0,
+n54-> T0,T10,T20,T76,T8,fp,r0,
+n55-> T0,T10,T20,T76,T77,T8,fp,r0,
+n56-> T0,T10,T20,T75,T8,fp,r0,
+n57-> T0,T20,T74,T8,fp,r0,
+n58-> T0,T20,T73,T8,fp,r0,
+n59-> T0,T20,T73,T78,T8,fp,r0,
+n60-> T0,T20,T8,fp,r0,
+n61-> T0,T20,T8,fp,
+n62-> T0,T20,T8,T80,fp,
+n63-> T0,T20,T79,T8,fp,
+n64-> T0,T11,T20,T8,fp,
+n65-> T0,T11,T20,T8,T83,fp,
+n66-> T0,T11,T20,T8,T82,fp,
+n67-> T0,T11,T20,T8,T81,fp,
+n68-> T0,T11,T20,T8,T81,fp,r0,
+n69-> T0,T11,T20,T8,fp,r0,r1,
+n70-> T0,T11,T20,T8,fp,r0,
+n71-> T0,T11,T20,T8,T89,fp,r0,
+n72-> T0,T11,T20,T8,T88,fp,r0,
+n73-> T0,T11,T20,T8,T87,fp,r0,
+n74-> T0,T11,T20,T8,T87,T90,fp,r0,
+n75-> T0,T11,T20,T8,T86,fp,r0,
+n76-> T0,T20,T8,T85,fp,r0,
+n77-> T0,T20,T8,T84,fp,r0,
+n78-> T0,T20,T8,T84,T91,fp,r0,
+n79-> T0,T20,T8,fp,r0,
+n80-> T0,T20,T8,fp,
+n81-> T0,T20,T8,T93,fp,
+n82-> T0,T20,T8,T92,fp,
+n83-> T0,T12,T20,T8,fp,
+n84-> T0,T12,T20,T8,fp,r0,
+n85-> T0,T12,T20,T8,fp,r0,r1,
+n86-> T0,T12,T20,T8,fp,
+n87-> T0,T12,T20,T8,T94,fp,
+n88-> T0,T12,T20,T8,T94,T96,fp,
+n89-> T0,T12,T20,T8,T94,T95,fp,
+n90-> T0,T20,T8,fp,
+n91-> T0,T20,T8,T98,fp,
+n92-> T0,T20,T8,T97,fp,
+n93-> T0,T13,T20,T8,fp,
+n94-> T0,T13,T20,T8,T99,fp,
+n95-> T0,T13,T20,T8,T99,fp,r0,
+n96-> T0,T13,T20,T8,fp,r0,r1,
+n97-> T0,T13,T20,T8,fp,
+n98-> T0,T100,T13,T20,T8,fp,
+n99-> T0,T100,T102,T13,T20,T8,fp,
+n100-> T0,T100,T102,T103,T13,T20,T8,fp,
+n101-> T0,T100,T101,T13,T20,T8,fp,
+n102-> T0,T20,T8,fp,
+n103-> T0,T105,T20,T8,fp,
+n104-> T0,T104,T20,T8,fp,
+n105-> T0,T14,T20,T8,fp,
+n106-> T0,T108,T14,T20,T8,fp,
+n107-> T0,T107,T14,T20,T8,fp,
+n108-> T0,T106,T14,T20,T8,fp,
+n109-> T0,T106,T14,T20,T8,fp,r0,
+n110-> T0,T14,T20,T8,fp,r0,r1,
+n111-> T0,T14,T20,T8,fp,
+n112-> T0,T109,T14,T20,T8,fp,
+n113-> T0,T109,T113,T14,T20,T8,fp,
+n114-> T0,T109,T112,T14,T20,T8,fp,
+n115-> T0,T109,T111,T14,T20,T8,fp,
+n116-> T0,T109,T111,T114,T14,T20,T8,fp,
+n117-> T0,T109,T110,T14,T20,T8,fp,
+n118-> T0,T20,T8,fp,
+n119-> T0,T116,T20,T8,fp,
+n120-> T0,T115,T20,T8,fp,
+n121-> T0,T15,T20,T8,fp,
+n122-> T0,T15,T20,T8,fp,r0,
+n123-> T0,T15,T20,T8,fp,r0,r1,
+n124-> T0,T15,T20,T8,fp,
+n125-> T0,T118,T15,T20,T8,fp,
+n126-> T0,T117,T15,T20,T8,fp,
+n127-> T0,T20,T8,fp,
+n128-> T0,T120,T20,T8,fp,
+n129-> T0,T119,T20,T8,fp,
+n130-> T0,T16,T20,T8,fp,
+n131-> T0,T121,T16,T20,T8,fp,
+n132-> T0,T16,T20,T8,fp,r0,
+n133-> T0,T20,T8,fp,r0,r1,
+n134-> T0,T20,T8,fp,
+n135-> T0,T123,T20,T8,fp,
+n136-> T0,T122,T20,T8,fp,
+n137-> T0,T17,T20,T8,fp,
+n138-> T0,T17,T20,T8,fp,r0,
+n139-> T0,T17,T20,T8,fp,r0,r1,
+n140-> T0,T17,T20,T8,fp,
+n141-> T0,T124,T17,T20,T8,fp,
+n142-> T0,T124,T126,T17,T20,T8,fp,
+n143-> T0,T124,T125,T17,T20,T8,fp,
+n144-> T0,T20,T8,fp,
+n145-> T0,T128,T20,T8,fp,
+n146-> T0,T127,T20,T8,fp,
+n147-> T0,T18,T20,T8,fp,
+n148-> T0,T129,T18,T20,T8,fp,
+n149-> T0,T129,T18,T20,T8,fp,r0,
+n150-> T0,T18,T20,T8,fp,r0,r1,
+n151-> T0,T18,T20,T8,fp,
+n152-> T0,T130,T18,T20,T8,fp,
+n153-> T0,T130,T132,T18,T20,T8,fp,
+n154-> T0,T130,T132,T133,T18,T20,T8,fp,
+n155-> T0,T130,T131,T18,T20,T8,fp,
+n156-> T0,T20,T8,fp,
+n157-> T0,T135,T20,T8,fp,
+n158-> T0,T134,T20,T8,fp,
+n159-> T0,T19,T20,T8,fp,
+n160-> T0,T138,T19,T20,T8,fp,
+n161-> T0,T137,T19,T20,T8,fp,
+n162-> T0,T136,T19,T20,T8,fp,
+n163-> T0,T136,T19,T20,T8,fp,r0,
+n164-> T0,T19,T20,T8,fp,r0,r1,
+n165-> T0,T19,T20,T8,fp,r0,
+n166-> T0,T139,T19,T20,T8,fp,r0,
+n167-> T0,T139,T143,T19,T20,T8,fp,r0,
+n168-> T0,T139,T142,T19,T20,T8,fp,r0,
+n169-> T0,T139,T141,T19,T20,T8,fp,r0,
+n170-> T0,T139,T141,T144,T19,T20,T8,fp,r0,
+n171-> T0,T139,T140,T19,T20,T8,fp,r0,
+n172-> T0,T20,T8,fp,r0,
+n173-> T0,T20,T8,fp,r0,
+n174-> r0,
+n175-> 
+
+
+interfence graph:
+
+Nodos : 
+T31
+fp
+T30
+T32
+T29
+T7
+T33
+T1
+T34
+r0
+r1
+r2
+r3
+T36
+T35
+T39
+T38
+T40
+T37
+T6
+T41
+T2
+T42
+T44
+T43
+T46
+T45
+T3
+T50
+T49
+T48
+T47
+T51
+T4
+T5
+T52
+T0
+T54
+T53
+T57
+T56
+T58
+T55
+T20
+T59
+T8
+T60
+T62
+T61
+T64
+T63
+T9
+T68
+T67
+T66
+T65
+T69
+T71
+T70
+T10
+T72
+T76
+T77
+T75
+T74
+T73
+T78
+T80
+T79
+T11
+T83
+T82
+T81
+T89
+T88
+T87
+T90
+T86
+T85
+T84
+T91
+T93
+T92
+T12
+T94
+T96
+T95
+T98
+T97
+T13
+T99
+T100
+T102
+T103
+T101
+T105
+T104
+T14
+T108
+T107
+T106
+T109
+T113
+T112
+T111
+T114
+T110
+T116
+T115
+T15
+T118
+T117
+T120
+T119
+T16
+T121
+T123
+T122
+T17
+T124
+T126
+T125
+T128
+T127
+T18
+T129
+T130
+T132
+T133
+T131
+T135
+T134
+T19
+T138
+T137
+T136
+T139
+T143
+T142
+T141
+T144
+T140
+
+
+ Aristas : 
+T31 --> fp
+T31 --> T31
+T30 --> fp
+T30 --> T30
+T32 --> fp
+T32 --> T32
+T32 --> T30
+T29 --> fp
+T29 --> T29
+T7 --> fp
+T7 --> T7
+T33 --> fp
+T33 --> T7
+T33 --> T33
+T1 --> fp
+T1 --> T7
+T1 --> T1
+T1 --> fp
+T1 --> T7
+T1 --> T1
+T34 --> T34
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T19
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T136
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T18
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T129
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T17
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T16
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T15
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T14
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T106
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T13
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T99
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T12
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T11
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T81
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T10
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T72
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T9
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T2
+r0 --> T1
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T2
+r0 --> T1
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T3
+r0 --> T2
+r0 --> T1
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T2
+r0 --> T1
+r0 --> fp
+r0 --> T7
+r0 --> T1
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T1
+r0 --> r0
+r0 --> r0
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T19
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T19
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T18
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T18
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T17
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T20
+r1 --> T17
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T15
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T15
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T14
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T14
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T13
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T13
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T12
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T20
+r1 --> T12
+r1 --> T0
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T11
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T11
+r1 --> T0
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T10
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T10
+r1 --> T0
+r1 --> r0
+r1 --> fp
+r1 --> T9
+r1 --> T8
+r1 --> T20
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T9
+r1 --> T20
+r1 --> T0
+r1 --> r0
+r1 --> fp
+r1 --> T7
+r1 --> T6
+r1 --> T2
+r1 --> T1
+r1 --> fp
+r1 --> T7
+r1 --> T6
+r1 --> T3
+r1 --> T2
+r1 --> T1
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T7
+r1 --> T6
+r1 --> T3
+r1 --> T2
+r1 --> fp
+r1 --> T7
+r1 --> T1
+r1 --> r0
+r2 --> r0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T19
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T18
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T17
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T15
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T14
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T13
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T12
+r2 --> T0
+r2 --> r0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T11
+r2 --> T0
+r2 --> r0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T10
+r2 --> T0
+r2 --> r0
+r2 --> fp
+r2 --> T9
+r2 --> T8
+r2 --> T20
+r2 --> T0
+r2 --> r0
+r2 --> fp
+r2 --> T7
+r2 --> T6
+r2 --> T2
+r2 --> T1
+r2 --> fp
+r2 --> T7
+r2 --> T6
+r2 --> T3
+r2 --> T2
+r2 --> T1
+r2 --> fp
+r2 --> T7
+r2 --> T1
+r2 --> r0
+r3 --> r0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T19
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T18
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T17
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T15
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T14
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T13
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T12
+r3 --> T0
+r3 --> r0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T11
+r3 --> T0
+r3 --> r0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T10
+r3 --> T0
+r3 --> r0
+r3 --> fp
+r3 --> T9
+r3 --> T8
+r3 --> T20
+r3 --> T0
+r3 --> r0
+r3 --> fp
+r3 --> T7
+r3 --> T6
+r3 --> T2
+r3 --> T1
+r3 --> fp
+r3 --> T7
+r3 --> T6
+r3 --> T3
+r3 --> T2
+r3 --> T1
+r3 --> fp
+r3 --> T7
+r3 --> T1
+r3 --> r0
+T36 --> fp
+T36 --> T7
+T36 --> T36
+T36 --> T1
+T35 --> fp
+T35 --> T7
+T35 --> T35
+T39 --> fp
+T39 --> T7
+T39 --> T39
+T39 --> T1
+T38 --> fp
+T38 --> T7
+T38 --> T38
+T38 --> T1
+T40 --> fp
+T40 --> T7
+T40 --> T40
+T40 --> T38
+T40 --> T1
+T37 --> fp
+T37 --> T7
+T37 --> T37
+T37 --> T1
+T6 --> fp
+T6 --> T7
+T6 --> T6
+T6 --> T1
+T41 --> fp
+T41 --> T7
+T41 --> T6
+T41 --> T41
+T41 --> T1
+T2 --> fp
+T2 --> T7
+T2 --> T6
+T2 --> T2
+T2 --> T1
+T2 --> fp
+T2 --> T7
+T2 --> T6
+T2 --> T2
+T2 --> T1
+T42 --> fp
+T42 --> T7
+T42 --> T42
+T42 --> T1
+T44 --> fp
+T44 --> T7
+T44 --> T6
+T44 --> T44
+T44 --> T2
+T44 --> T1
+T43 --> fp
+T43 --> T7
+T43 --> T6
+T43 --> T43
+T43 --> T1
+T46 --> fp
+T46 --> T7
+T46 --> T6
+T46 --> T46
+T46 --> T2
+T46 --> T1
+T45 --> fp
+T45 --> T7
+T45 --> T6
+T45 --> T45
+T45 --> T2
+T45 --> T1
+T3 --> fp
+T3 --> T7
+T3 --> T6
+T3 --> T3
+T3 --> T2
+T3 --> T1
+T50 --> fp
+T50 --> T7
+T50 --> T6
+T50 --> T50
+T50 --> T3
+T50 --> T2
+T50 --> T1
+T49 --> fp
+T49 --> T7
+T49 --> T6
+T49 --> T49
+T49 --> T3
+T49 --> T2
+T49 --> T1
+T48 --> fp
+T48 --> T7
+T48 --> T6
+T48 --> T48
+T48 --> T2
+T48 --> T1
+T47 --> fp
+T47 --> T7
+T47 --> T6
+T47 --> T47
+T47 --> T2
+T47 --> T1
+T51 --> fp
+T51 --> T7
+T51 --> T6
+T51 --> T51
+T51 --> T2
+T51 --> T1
+T4 --> fp
+T4 --> T7
+T4 --> T6
+T4 --> T4
+T4 --> T2
+T4 --> T1
+T4 --> fp
+T4 --> T7
+T4 --> T6
+T4 --> T4
+T4 --> T2
+T4 --> T1
+T5 --> fp
+T5 --> T7
+T5 --> T6
+T5 --> T5
+T5 --> T2
+T5 --> T1
+T52 --> fp
+T52 --> T7
+T52 --> T6
+T52 --> T52
+T52 --> T2
+T52 --> T1
+T0 --> r0
+T0 --> fp
+T0 --> T0
+T54 --> r0
+T54 --> fp
+T54 --> T54
+T54 --> T0
+T53 --> r0
+T53 --> fp
+T53 --> T53
+T53 --> T0
+T57 --> r0
+T57 --> fp
+T57 --> T57
+T57 --> T0
+T56 --> r0
+T56 --> fp
+T56 --> T56
+T56 --> T0
+T58 --> r0
+T58 --> fp
+T58 --> T58
+T58 --> T56
+T58 --> T0
+T55 --> r0
+T55 --> fp
+T55 --> T55
+T55 --> T0
+T20 --> r0
+T20 --> fp
+T20 --> T20
+T20 --> T0
+T59 --> r0
+T59 --> fp
+T59 --> T59
+T59 --> T20
+T59 --> T0
+T8 --> r0
+T8 --> fp
+T8 --> T8
+T8 --> T20
+T8 --> T0
+T8 --> r0
+T8 --> fp
+T8 --> T8
+T8 --> T20
+T8 --> T0
+T60 --> T60
+T62 --> r0
+T62 --> fp
+T62 --> T8
+T62 --> T62
+T62 --> T20
+T62 --> T0
+T61 --> r0
+T61 --> fp
+T61 --> T61
+T61 --> T20
+T61 --> T0
+T64 --> fp
+T64 --> T8
+T64 --> T64
+T64 --> T20
+T64 --> T0
+T63 --> fp
+T63 --> T8
+T63 --> T63
+T63 --> T20
+T63 --> T0
+T9 --> fp
+T9 --> T9
+T9 --> T8
+T9 --> T20
+T9 --> T0
+T68 --> r0
+T68 --> fp
+T68 --> T9
+T68 --> T8
+T68 --> T68
+T68 --> T20
+T68 --> T0
+T67 --> r0
+T67 --> fp
+T67 --> T9
+T67 --> T8
+T67 --> T67
+T67 --> T20
+T67 --> T0
+T66 --> r0
+T66 --> fp
+T66 --> T8
+T66 --> T66
+T66 --> T20
+T66 --> T0
+T65 --> r0
+T65 --> fp
+T65 --> T8
+T65 --> T65
+T65 --> T20
+T65 --> T0
+T69 --> r0
+T69 --> fp
+T69 --> T8
+T69 --> T69
+T69 --> T65
+T69 --> T20
+T69 --> T0
+T71 --> fp
+T71 --> T8
+T71 --> T71
+T71 --> T20
+T71 --> T0
+T70 --> fp
+T70 --> T8
+T70 --> T70
+T70 --> T20
+T70 --> T0
+T10 --> fp
+T10 --> T8
+T10 --> T20
+T10 --> T10
+T10 --> T0
+T72 --> fp
+T72 --> T8
+T72 --> T72
+T72 --> T20
+T72 --> T10
+T72 --> T0
+T76 --> r0
+T76 --> fp
+T76 --> T8
+T76 --> T76
+T76 --> T20
+T76 --> T10
+T76 --> T0
+T77 --> r0
+T77 --> fp
+T77 --> T8
+T77 --> T77
+T77 --> T76
+T77 --> T20
+T77 --> T10
+T77 --> T0
+T75 --> r0
+T75 --> fp
+T75 --> T8
+T75 --> T75
+T75 --> T20
+T75 --> T10
+T75 --> T0
+T74 --> r0
+T74 --> fp
+T74 --> T8
+T74 --> T74
+T74 --> T20
+T74 --> T0
+T73 --> r0
+T73 --> fp
+T73 --> T8
+T73 --> T73
+T73 --> T20
+T73 --> T0
+T78 --> r0
+T78 --> fp
+T78 --> T8
+T78 --> T78
+T78 --> T73
+T78 --> T20
+T78 --> T0
+T80 --> fp
+T80 --> T80
+T80 --> T8
+T80 --> T20
+T80 --> T0
+T79 --> fp
+T79 --> T8
+T79 --> T79
+T79 --> T20
+T79 --> T0
+T11 --> fp
+T11 --> T8
+T11 --> T20
+T11 --> T11
+T11 --> T0
+T83 --> fp
+T83 --> T83
+T83 --> T8
+T83 --> T20
+T83 --> T11
+T83 --> T0
+T82 --> fp
+T82 --> T82
+T82 --> T8
+T82 --> T20
+T82 --> T11
+T82 --> T0
+T81 --> fp
+T81 --> T81
+T81 --> T8
+T81 --> T20
+T81 --> T11
+T81 --> T0
+T89 --> r0
+T89 --> fp
+T89 --> T89
+T89 --> T8
+T89 --> T20
+T89 --> T11
+T89 --> T0
+T88 --> r0
+T88 --> fp
+T88 --> T88
+T88 --> T8
+T88 --> T20
+T88 --> T11
+T88 --> T0
+T87 --> r0
+T87 --> fp
+T87 --> T87
+T87 --> T8
+T87 --> T20
+T87 --> T11
+T87 --> T0
+T90 --> r0
+T90 --> fp
+T90 --> T90
+T90 --> T87
+T90 --> T8
+T90 --> T20
+T90 --> T11
+T90 --> T0
+T86 --> r0
+T86 --> fp
+T86 --> T86
+T86 --> T8
+T86 --> T20
+T86 --> T11
+T86 --> T0
+T85 --> r0
+T85 --> fp
+T85 --> T85
+T85 --> T8
+T85 --> T20
+T85 --> T0
+T84 --> r0
+T84 --> fp
+T84 --> T84
+T84 --> T8
+T84 --> T20
+T84 --> T0
+T91 --> r0
+T91 --> fp
+T91 --> T91
+T91 --> T84
+T91 --> T8
+T91 --> T20
+T91 --> T0
+T93 --> fp
+T93 --> T93
+T93 --> T8
+T93 --> T20
+T93 --> T0
+T92 --> fp
+T92 --> T92
+T92 --> T8
+T92 --> T20
+T92 --> T0
+T12 --> fp
+T12 --> T8
+T12 --> T20
+T12 --> T12
+T12 --> T0
+T94 --> fp
+T94 --> T94
+T94 --> T8
+T94 --> T20
+T94 --> T12
+T94 --> T0
+T96 --> fp
+T96 --> T96
+T96 --> T94
+T96 --> T8
+T96 --> T20
+T96 --> T12
+T96 --> T0
+T95 --> fp
+T95 --> T95
+T95 --> T94
+T95 --> T8
+T95 --> T20
+T95 --> T12
+T95 --> T0
+T98 --> fp
+T98 --> T98
+T98 --> T8
+T98 --> T20
+T98 --> T0
+T97 --> fp
+T97 --> T97
+T97 --> T8
+T97 --> T20
+T97 --> T0
+T13 --> fp
+T13 --> T8
+T13 --> T20
+T13 --> T13
+T13 --> T0
+T99 --> fp
+T99 --> T99
+T99 --> T8
+T99 --> T20
+T99 --> T13
+T99 --> T0
+T100 --> fp
+T100 --> T8
+T100 --> T20
+T100 --> T13
+T100 --> T100
+T100 --> T0
+T102 --> fp
+T102 --> T8
+T102 --> T20
+T102 --> T13
+T102 --> T102
+T102 --> T100
+T102 --> T0
+T103 --> fp
+T103 --> T8
+T103 --> T20
+T103 --> T13
+T103 --> T103
+T103 --> T102
+T103 --> T100
+T103 --> T0
+T101 --> fp
+T101 --> T8
+T101 --> T20
+T101 --> T13
+T101 --> T101
+T101 --> T100
+T101 --> T0
+T105 --> fp
+T105 --> T8
+T105 --> T20
+T105 --> T105
+T105 --> T0
+T104 --> fp
+T104 --> T8
+T104 --> T20
+T104 --> T104
+T104 --> T0
+T14 --> fp
+T14 --> T8
+T14 --> T20
+T14 --> T14
+T14 --> T0
+T108 --> fp
+T108 --> T8
+T108 --> T20
+T108 --> T14
+T108 --> T108
+T108 --> T0
+T107 --> fp
+T107 --> T8
+T107 --> T20
+T107 --> T14
+T107 --> T107
+T107 --> T0
+T106 --> fp
+T106 --> T8
+T106 --> T20
+T106 --> T14
+T106 --> T106
+T106 --> T0
+T109 --> fp
+T109 --> T8
+T109 --> T20
+T109 --> T14
+T109 --> T109
+T109 --> T0
+T113 --> fp
+T113 --> T8
+T113 --> T20
+T113 --> T14
+T113 --> T113
+T113 --> T109
+T113 --> T0
+T112 --> fp
+T112 --> T8
+T112 --> T20
+T112 --> T14
+T112 --> T112
+T112 --> T109
+T112 --> T0
+T111 --> fp
+T111 --> T8
+T111 --> T20
+T111 --> T14
+T111 --> T111
+T111 --> T109
+T111 --> T0
+T114 --> fp
+T114 --> T8
+T114 --> T20
+T114 --> T14
+T114 --> T114
+T114 --> T111
+T114 --> T109
+T114 --> T0
+T110 --> fp
+T110 --> T8
+T110 --> T20
+T110 --> T14
+T110 --> T110
+T110 --> T109
+T110 --> T0
+T116 --> fp
+T116 --> T8
+T116 --> T20
+T116 --> T116
+T116 --> T0
+T115 --> fp
+T115 --> T8
+T115 --> T20
+T115 --> T115
+T115 --> T0
+T15 --> fp
+T15 --> T8
+T15 --> T20
+T15 --> T15
+T15 --> T0
+T118 --> fp
+T118 --> T8
+T118 --> T20
+T118 --> T15
+T118 --> T118
+T118 --> T0
+T117 --> fp
+T117 --> T8
+T117 --> T20
+T117 --> T15
+T117 --> T117
+T117 --> T0
+T120 --> fp
+T120 --> T8
+T120 --> T20
+T120 --> T120
+T120 --> T0
+T119 --> fp
+T119 --> T8
+T119 --> T20
+T119 --> T119
+T119 --> T0
+T16 --> fp
+T16 --> T8
+T16 --> T20
+T16 --> T16
+T16 --> T0
+T121 --> fp
+T121 --> T8
+T121 --> T20
+T121 --> T16
+T121 --> T121
+T121 --> T0
+T123 --> fp
+T123 --> T8
+T123 --> T20
+T123 --> T123
+T123 --> T0
+T122 --> fp
+T122 --> T8
+T122 --> T20
+T122 --> T122
+T122 --> T0
+T17 --> fp
+T17 --> T8
+T17 --> T20
+T17 --> T17
+T17 --> T0
+T124 --> fp
+T124 --> T8
+T124 --> T20
+T124 --> T17
+T124 --> T124
+T124 --> T0
+T126 --> fp
+T126 --> T8
+T126 --> T20
+T126 --> T17
+T126 --> T126
+T126 --> T124
+T126 --> T0
+T125 --> fp
+T125 --> T8
+T125 --> T20
+T125 --> T17
+T125 --> T125
+T125 --> T124
+T125 --> T0
+T128 --> fp
+T128 --> T8
+T128 --> T20
+T128 --> T128
+T128 --> T0
+T127 --> fp
+T127 --> T8
+T127 --> T20
+T127 --> T127
+T127 --> T0
+T18 --> fp
+T18 --> T8
+T18 --> T20
+T18 --> T18
+T18 --> T0
+T129 --> fp
+T129 --> T8
+T129 --> T20
+T129 --> T18
+T129 --> T129
+T129 --> T0
+T130 --> fp
+T130 --> T8
+T130 --> T20
+T130 --> T18
+T130 --> T130
+T130 --> T0
+T132 --> fp
+T132 --> T8
+T132 --> T20
+T132 --> T18
+T132 --> T132
+T132 --> T130
+T132 --> T0
+T133 --> fp
+T133 --> T8
+T133 --> T20
+T133 --> T18
+T133 --> T133
+T133 --> T132
+T133 --> T130
+T133 --> T0
+T131 --> fp
+T131 --> T8
+T131 --> T20
+T131 --> T18
+T131 --> T131
+T131 --> T130
+T131 --> T0
+T135 --> fp
+T135 --> T8
+T135 --> T20
+T135 --> T135
+T135 --> T0
+T134 --> fp
+T134 --> T8
+T134 --> T20
+T134 --> T134
+T134 --> T0
+T19 --> fp
+T19 --> T8
+T19 --> T20
+T19 --> T19
+T19 --> T0
+T138 --> fp
+T138 --> T8
+T138 --> T20
+T138 --> T19
+T138 --> T138
+T138 --> T0
+T137 --> fp
+T137 --> T8
+T137 --> T20
+T137 --> T19
+T137 --> T137
+T137 --> T0
+T136 --> fp
+T136 --> T8
+T136 --> T20
+T136 --> T19
+T136 --> T136
+T136 --> T0
+T139 --> r0
+T139 --> fp
+T139 --> T8
+T139 --> T20
+T139 --> T19
+T139 --> T139
+T139 --> T0
+T143 --> r0
+T143 --> fp
+T143 --> T8
+T143 --> T20
+T143 --> T19
+T143 --> T143
+T143 --> T139
+T143 --> T0
+T142 --> r0
+T142 --> fp
+T142 --> T8
+T142 --> T20
+T142 --> T19
+T142 --> T142
+T142 --> T139
+T142 --> T0
+T141 --> r0
+T141 --> fp
+T141 --> T8
+T141 --> T20
+T141 --> T19
+T141 --> T141
+T141 --> T139
+T141 --> T0
+T144 --> r0
+T144 --> fp
+T144 --> T8
+T144 --> T20
+T144 --> T19
+T144 --> T144
+T144 --> T141
+T144 --> T139
+T144 --> T0
+T140 --> r0
+T140 --> fp
+T140 --> T8
+T140 --> T20
+T140 --> T19
+T140 --> T140
+T140 --> T139
+T140 --> T0
+
+
+
+
+
+initial:
+T0
+T10
+T100
+T101
+T102
+T103
+T104
+T105
+T106
+T107
+T108
+T109
+T11
+T110
+T111
+T112
+T113
+T114
+T115
+T116
+T117
+T118
+T119
+T12
+T120
+T121
+T122
+T123
+T124
+T125
+T126
+T127
+T128
+T129
+T13
+T130
+T131
+T132
+T133
+T134
+T135
+T136
+T137
+T138
+T139
+T14
+T140
+T141
+T142
+T143
+T144
+T15
+T16
+T17
+T18
+T19
+T20
+T53
+T54
+T55
+T56
+T57
+T58
+T59
+T60
+T61
+T62
+T63
+T64
+T65
+T66
+T67
+T68
+T69
+T70
+T71
+T72
+T73
+T74
+T75
+T76
+T77
+T78
+T79
+T8
+T80
+T81
+T82
+T83
+T84
+T85
+T86
+T87
+T88
+T89
+T9
+T90
+T91
+T92
+T93
+T94
+T95
+T96
+T97
+T98
+T99
+
+
+precolored:
+r0
+r1
+r10
+r2
+r3
+r4
+r5
+r6
+r7
+r8
+r9
+
+
+simplifyWorklist:
+T100
+T101
+T102
+T103
+T105
+T107
+T108
+T109
+T110
+T111
+T112
+T113
+T114
+T116
+T117
+T118
+T120
+T123
+T124
+T125
+T126
+T128
+T130
+T131
+T132
+T133
+T135
+T137
+T138
+T139
+T140
+T141
+T142
+T143
+T144
+T53
+T54
+T56
+T57
+T58
+T62
+T64
+T65
+T66
+T67
+T68
+T69
+T71
+T73
+T74
+T75
+T76
+T77
+T78
+T80
+T82
+T83
+T84
+T85
+T86
+T87
+T88
+T89
+T90
+T91
+T93
+T94
+T95
+T96
+T98
+
+
+freezeWorklist:
+T104
+T106
+T115
+T119
+T12
+T121
+T122
+T127
+T129
+T134
+T136
+T15
+T16
+T17
+T55
+T59
+T60
+T61
+T63
+T70
+T72
+T79
+T81
+T9
+T92
+T97
+T99
+
+
+spillWorklist:
+T0
+T10
+T11
+T13
+T14
+T18
+T19
+T20
+T8
+
+
+Before loop...
+
+
+After loop...
+
+
+color:
+fp->fp
+lr->lr
+r10->r10
+r0->r0
+r1->r1
+r2->r2
+r3->r3
+r4->r4
+r5->r5
+r6->r6
+r7->r7
+r8->r8
+r9->r9
+pc->pc
+sp->sp
+T10->r6
+T11->r6
+T12->r6
+T13->r6
+T14->r6
+T15->r6
+T16->r1
+T17->r6
+T18->r6
+T19->r6
+T20->r4
+T0->r10
+T8->r8
+T9->r6
+T53->r1
+T54->r1
+T55->r4
+T56->r1
+T57->r1
+T58->r8
+T59->r8
+T60->r0
+T61->r8
+T62->r6
+T63->r6
+T64->r7
+T65->r6
+T66->r6
+T67->r3
+T68->r3
+T69->r5
+T70->r6
+T71->r7
+T72->r1
+T73->r6
+T74->r6
+T75->r5
+T76->r5
+T77->r3
+T78->r5
+T79->r6
+T80->r7
+T81->r1
+T82->r7
+T83->r7
+T84->r6
+T85->r6
+T86->r5
+T87->r5
+T88->r5
+T89->r5
+T90->r2
+T91->r3
+T92->r6
+T93->r7
+T94->r7
+T95->r5
+T96->r5
+T97->r6
+T98->r7
+T99->r1
+T100->r7
+T101->r5
+T102->r5
+T103->r3
+T104->r6
+T105->r7
+T106->r1
+T107->r7
+T108->r7
+T109->r7
+T110->r5
+T111->r5
+T112->r5
+T113->r5
+T114->r3
+T115->r6
+T116->r7
+T117->r7
+T118->r7
+T119->r1
+T120->r7
+T121->r0
+T122->r6
+T123->r7
+T124->r7
+T125->r5
+T126->r5
+T127->r6
+T128->r7
+T129->r1
+T130->r7
+T131->r5
+T132->r5
+T133->r3
+T134->r6
+T135->r7
+T136->r1
+T137->r7
+T138->r7
+T139->r5
+T140->r3
+T141->r3
+T142->r3
+T143->r3
+T144->r2
+
+
+spilledNodes:
+
+
+********** END COLOR: **********  
+
+********** COLOR: **********  
+
+
+
+flow graph:
+
+Nodos : 
+n0: L36:
+def: use: notMove
+n1: str     r0, [fp, #0]
+def: use: r0,fp,notMove
+n2: mov T145, #8
+def: T145,use: notMove
+n3: str     T145, [fp, #-4]
+def: use: T145,fp,notMove
+n4: mov T147, #8
+def: T147,use: notMove
+n5: sub     T146, fp, T147
+def: T146,use: fp,T147,notMove
+n6: mov     T22, T146
+def: T22,use: T146,isMove
+n7: ldr     T148, [fp, #-4]
+def: T148,use: fp,notMove
+n8: movw   T149, #:lower16:0
+movt   T149, #:upper16:0
+def: T149,use: notMove
+n9: mov     r0, T148
+def: r0,use: T148,isMove
+n10: mov     r1, T149
+def: r1,use: T149,isMove
+n11: bl      _initArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n12: mov     T21, r0
+def: T21,use: r0,isMove
+n13: str     T21,[T22]
+def: use: T21,T22,notMove
+n14: mov T151, #12
+def: T151,use: notMove
+n15: sub     T150, fp, T151
+def: T150,use: fp,T151,notMove
+n16: mov     T24, T150
+def: T24,use: T150,isMove
+n17: ldr     T152, [fp, #-4]
+def: T152,use: fp,notMove
+n18: movw   T153, #:lower16:0
+movt   T153, #:upper16:0
+def: T153,use: notMove
+n19: mov     r0, T152
+def: r0,use: T152,isMove
+n20: mov     r1, T153
+def: r1,use: T153,isMove
+n21: bl      _initArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n22: mov     T23, r0
+def: T23,use: r0,isMove
+n23: str     T23,[T24]
+def: use: T23,T24,notMove
+n24: mov T155, #16
+def: T155,use: notMove
+n25: sub     T154, fp, T155
+def: T154,use: fp,T155,notMove
+n26: mov     T26, T154
+def: T26,use: T154,isMove
+n27: ldr     T158, [fp, #-4]
+def: T158,use: fp,notMove
+n28: ldr     T159, [fp, #-4]
+def: T159,use: fp,notMove
+n29: add     T157, T158, T159
+def: T157,use: T158,T159,notMove
+n30: mov T160, #1
+def: T160,use: notMove
+n31: sub     T156, T157, T160
+def: T156,use: T157,T160,notMove
+n32: movw   T161, #:lower16:0
+movt   T161, #:upper16:0
+def: T161,use: notMove
+n33: mov     r0, T156
+def: r0,use: T156,isMove
+n34: mov     r1, T161
+def: r1,use: T161,isMove
+n35: bl      _initArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n36: mov     T25, r0
+def: T25,use: r0,isMove
+n37: str     T25,[T26]
+def: use: T25,T26,notMove
+n38: mov T163, #20
+def: T163,use: notMove
+n39: sub     T162, fp, T163
+def: T162,use: fp,T163,notMove
+n40: mov     T28, T162
+def: T28,use: T162,isMove
+n41: ldr     T166, [fp, #-4]
+def: T166,use: fp,notMove
+n42: ldr     T167, [fp, #-4]
+def: T167,use: fp,notMove
+n43: add     T165, T166, T167
+def: T165,use: T166,T167,notMove
+n44: mov T168, #1
+def: T168,use: notMove
+n45: sub     T164, T165, T168
+def: T164,use: T165,T168,notMove
+n46: movw   T169, #:lower16:0
+movt   T169, #:upper16:0
+def: T169,use: notMove
+n47: mov     r0, T164
+def: r0,use: T164,isMove
+n48: mov     r1, T169
+def: r1,use: T169,isMove
+n49: bl      _initArray
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n50: mov     T27, r0
+def: T27,use: r0,isMove
+n51: str     T27,[T28]
+def: use: T27,T28,notMove
+n52: movw   T170, #:lower16:0
+movt   T170, #:upper16:0
+def: T170,use: notMove
+n53: mov     r0, fp
+def: r0,use: fp,isMove
+n54: mov     r1, T170
+def: r1,use: T170,isMove
+n55: bl      L1
+def: r0,r1,r2,r3,use: r0,r1,notMove
+n56: b       L35
+def: use: notMove
+n57: L35:
+def: use: notMove
+n58: def: use: r0,notMove
+
+
+Aristas : 
+n0 --> n1
+n1 --> n2
+n2 --> n3
+n3 --> n4
+n4 --> n5
+n5 --> n6
+n6 --> n7
+n7 --> n8
+n8 --> n9
+n9 --> n10
+n10 --> n11
+n11 --> n12
+n12 --> n13
+n13 --> n14
+n14 --> n15
+n15 --> n16
+n16 --> n17
+n17 --> n18
+n18 --> n19
+n19 --> n20
+n20 --> n21
+n21 --> n22
+n22 --> n23
+n23 --> n24
+n24 --> n25
+n25 --> n26
+n26 --> n27
+n27 --> n28
+n28 --> n29
+n29 --> n30
+n30 --> n31
+n31 --> n32
+n32 --> n33
+n33 --> n34
+n34 --> n35
+n35 --> n36
+n36 --> n37
+n37 --> n38
+n38 --> n39
+n39 --> n40
+n40 --> n41
+n41 --> n42
+n42 --> n43
+n43 --> n44
+n44 --> n45
+n45 --> n46
+n46 --> n47
+n47 --> n48
+n48 --> n49
+n49 --> n50
+n50 --> n51
+n51 --> n52
+n52 --> n53
+n53 --> n54
+n54 --> n55
+n55 --> n56
+n56 --> n57
+n57 --> n58
+
+
+
+
+
+liveout:
+
+n0-> fp,r0,
+n1-> fp,
+n2-> T145,fp,
+n3-> fp,
+n4-> T147,fp,
+n5-> T146,fp,
+n6-> T22,fp,
+n7-> T148,T22,fp,
+n8-> T148,T149,T22,fp,
+n9-> T149,T22,fp,r0,
+n10-> T22,fp,r0,r1,
+n11-> T22,fp,r0,
+n12-> T21,T22,fp,
+n13-> fp,
+n14-> T151,fp,
+n15-> T150,fp,
+n16-> T24,fp,
+n17-> T152,T24,fp,
+n18-> T152,T153,T24,fp,
+n19-> T153,T24,fp,r0,
+n20-> T24,fp,r0,r1,
+n21-> T24,fp,r0,
+n22-> T23,T24,fp,
+n23-> fp,
+n24-> T155,fp,
+n25-> T154,fp,
+n26-> T26,fp,
+n27-> T158,T26,fp,
+n28-> T158,T159,T26,fp,
+n29-> T157,T26,fp,
+n30-> T157,T160,T26,fp,
+n31-> T156,T26,fp,
+n32-> T156,T161,T26,fp,
+n33-> T161,T26,fp,r0,
+n34-> T26,fp,r0,r1,
+n35-> T26,fp,r0,
+n36-> T25,T26,fp,
+n37-> fp,
+n38-> T163,fp,
+n39-> T162,fp,
+n40-> T28,fp,
+n41-> T166,T28,fp,
+n42-> T166,T167,T28,fp,
+n43-> T165,T28,fp,
+n44-> T165,T168,T28,fp,
+n45-> T164,T28,fp,
+n46-> T164,T169,T28,fp,
+n47-> T169,T28,fp,r0,
+n48-> T28,fp,r0,r1,
+n49-> T28,fp,r0,
+n50-> T27,T28,fp,
+n51-> fp,
+n52-> T170,fp,
+n53-> T170,r0,
+n54-> r0,r1,
+n55-> r0,
+n56-> r0,
+n57-> r0,
+n58-> 
+
+
+interfence graph:
+
+Nodos : 
+T31
+fp
+T30
+T32
+T29
+T7
+T33
+T1
+T34
+r0
+r1
+r2
+r3
+T36
+T35
+T39
+T38
+T40
+T37
+T6
+T41
+T2
+T42
+T44
+T43
+T46
+T45
+T3
+T50
+T49
+T48
+T47
+T51
+T4
+T5
+T52
+T0
+T54
+T53
+T57
+T56
+T58
+T55
+T20
+T59
+T8
+T60
+T62
+T61
+T64
+T63
+T9
+T68
+T67
+T66
+T65
+T69
+T71
+T70
+T10
+T72
+T76
+T77
+T75
+T74
+T73
+T78
+T80
+T79
+T11
+T83
+T82
+T81
+T89
+T88
+T87
+T90
+T86
+T85
+T84
+T91
+T93
+T92
+T12
+T94
+T96
+T95
+T98
+T97
+T13
+T99
+T100
+T102
+T103
+T101
+T105
+T104
+T14
+T108
+T107
+T106
+T109
+T113
+T112
+T111
+T114
+T110
+T116
+T115
+T15
+T118
+T117
+T120
+T119
+T16
+T121
+T123
+T122
+T17
+T124
+T126
+T125
+T128
+T127
+T18
+T129
+T130
+T132
+T133
+T131
+T135
+T134
+T19
+T138
+T137
+T136
+T139
+T143
+T142
+T141
+T144
+T140
+T145
+T147
+T146
+T22
+T148
+T149
+T21
+T151
+T150
+T24
+T152
+T153
+T23
+T155
+T154
+T26
+T158
+T159
+T157
+T160
+T156
+T161
+T25
+T163
+T162
+T28
+T166
+T167
+T165
+T168
+T164
+T169
+T27
+T170
+
+
+ Aristas : 
+T31 --> fp
+T31 --> T31
+T30 --> fp
+T30 --> T30
+T32 --> fp
+T32 --> T32
+T32 --> T30
+T29 --> fp
+T29 --> T29
+T7 --> fp
+T7 --> T7
+T33 --> fp
+T33 --> T7
+T33 --> T33
+T1 --> fp
+T1 --> T7
+T1 --> T1
+T1 --> fp
+T1 --> T7
+T1 --> T1
+T34 --> T34
+r0 --> r0
+r0 --> r0
+r0 --> T170
+r0 --> r0
+r0 --> fp
+r0 --> T28
+r0 --> r0
+r0 --> fp
+r0 --> T28
+r0 --> T169
+r0 --> r0
+r0 --> fp
+r0 --> T26
+r0 --> r0
+r0 --> fp
+r0 --> T26
+r0 --> T161
+r0 --> r0
+r0 --> fp
+r0 --> T24
+r0 --> r0
+r0 --> fp
+r0 --> T24
+r0 --> T153
+r0 --> r0
+r0 --> fp
+r0 --> T22
+r0 --> r0
+r0 --> fp
+r0 --> T22
+r0 --> T149
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T19
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T136
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T18
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T129
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T17
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T16
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T15
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T14
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T106
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T13
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T99
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T12
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T11
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T81
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T10
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T72
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T9
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> fp
+r0 --> T8
+r0 --> T20
+r0 --> T0
+r0 --> r0
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T2
+r0 --> T1
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T2
+r0 --> T1
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T3
+r0 --> T2
+r0 --> T1
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T6
+r0 --> T2
+r0 --> T1
+r0 --> fp
+r0 --> T7
+r0 --> T1
+r0 --> r0
+r0 --> fp
+r0 --> T7
+r0 --> T1
+r0 --> r0
+r0 --> r0
+r1 --> r0
+r1 --> r1
+r1 --> r0
+r1 --> r0
+r1 --> fp
+r1 --> T28
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T28
+r1 --> r0
+r1 --> fp
+r1 --> T26
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T26
+r1 --> r0
+r1 --> fp
+r1 --> T24
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T24
+r1 --> r0
+r1 --> fp
+r1 --> T22
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T22
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T19
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T19
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T18
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T18
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T17
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T20
+r1 --> T17
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T15
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T15
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T14
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T14
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T13
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T13
+r1 --> T0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T12
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T20
+r1 --> T12
+r1 --> T0
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T11
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T11
+r1 --> T0
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T10
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T8
+r1 --> T20
+r1 --> T10
+r1 --> T0
+r1 --> r0
+r1 --> fp
+r1 --> T9
+r1 --> T8
+r1 --> T20
+r1 --> T0
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T9
+r1 --> T20
+r1 --> T0
+r1 --> r0
+r1 --> fp
+r1 --> T7
+r1 --> T6
+r1 --> T2
+r1 --> T1
+r1 --> fp
+r1 --> T7
+r1 --> T6
+r1 --> T3
+r1 --> T2
+r1 --> T1
+r1 --> r1
+r1 --> r0
+r1 --> fp
+r1 --> T7
+r1 --> T6
+r1 --> T3
+r1 --> T2
+r1 --> fp
+r1 --> T7
+r1 --> T1
+r1 --> r0
+r2 --> r0
+r2 --> r0
+r2 --> fp
+r2 --> T28
+r2 --> r0
+r2 --> fp
+r2 --> T26
+r2 --> r0
+r2 --> fp
+r2 --> T24
+r2 --> r0
+r2 --> fp
+r2 --> T22
+r2 --> r0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T19
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T18
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T17
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T15
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T14
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T13
+r2 --> T0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T12
+r2 --> T0
+r2 --> r0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T11
+r2 --> T0
+r2 --> r0
+r2 --> fp
+r2 --> T8
+r2 --> T20
+r2 --> T10
+r2 --> T0
+r2 --> r0
+r2 --> fp
+r2 --> T9
+r2 --> T8
+r2 --> T20
+r2 --> T0
+r2 --> r0
+r2 --> fp
+r2 --> T7
+r2 --> T6
+r2 --> T2
+r2 --> T1
+r2 --> fp
+r2 --> T7
+r2 --> T6
+r2 --> T3
+r2 --> T2
+r2 --> T1
+r2 --> fp
+r2 --> T7
+r2 --> T1
+r2 --> r0
+r3 --> r0
+r3 --> r0
+r3 --> fp
+r3 --> T28
+r3 --> r0
+r3 --> fp
+r3 --> T26
+r3 --> r0
+r3 --> fp
+r3 --> T24
+r3 --> r0
+r3 --> fp
+r3 --> T22
+r3 --> r0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T19
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T18
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T17
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T15
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T14
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T13
+r3 --> T0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T12
+r3 --> T0
+r3 --> r0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T11
+r3 --> T0
+r3 --> r0
+r3 --> fp
+r3 --> T8
+r3 --> T20
+r3 --> T10
+r3 --> T0
+r3 --> r0
+r3 --> fp
+r3 --> T9
+r3 --> T8
+r3 --> T20
+r3 --> T0
+r3 --> r0
+r3 --> fp
+r3 --> T7
+r3 --> T6
+r3 --> T2
+r3 --> T1
+r3 --> fp
+r3 --> T7
+r3 --> T6
+r3 --> T3
+r3 --> T2
+r3 --> T1
+r3 --> fp
+r3 --> T7
+r3 --> T1
+r3 --> r0
+T36 --> fp
+T36 --> T7
+T36 --> T36
+T36 --> T1
+T35 --> fp
+T35 --> T7
+T35 --> T35
+T39 --> fp
+T39 --> T7
+T39 --> T39
+T39 --> T1
+T38 --> fp
+T38 --> T7
+T38 --> T38
+T38 --> T1
+T40 --> fp
+T40 --> T7
+T40 --> T40
+T40 --> T38
+T40 --> T1
+T37 --> fp
+T37 --> T7
+T37 --> T37
+T37 --> T1
+T6 --> fp
+T6 --> T7
+T6 --> T6
+T6 --> T1
+T41 --> fp
+T41 --> T7
+T41 --> T6
+T41 --> T41
+T41 --> T1
+T2 --> fp
+T2 --> T7
+T2 --> T6
+T2 --> T2
+T2 --> T1
+T2 --> fp
+T2 --> T7
+T2 --> T6
+T2 --> T2
+T2 --> T1
+T42 --> fp
+T42 --> T7
+T42 --> T42
+T42 --> T1
+T44 --> fp
+T44 --> T7
+T44 --> T6
+T44 --> T44
+T44 --> T2
+T44 --> T1
+T43 --> fp
+T43 --> T7
+T43 --> T6
+T43 --> T43
+T43 --> T1
+T46 --> fp
+T46 --> T7
+T46 --> T6
+T46 --> T46
+T46 --> T2
+T46 --> T1
+T45 --> fp
+T45 --> T7
+T45 --> T6
+T45 --> T45
+T45 --> T2
+T45 --> T1
+T3 --> fp
+T3 --> T7
+T3 --> T6
+T3 --> T3
+T3 --> T2
+T3 --> T1
+T50 --> fp
+T50 --> T7
+T50 --> T6
+T50 --> T50
+T50 --> T3
+T50 --> T2
+T50 --> T1
+T49 --> fp
+T49 --> T7
+T49 --> T6
+T49 --> T49
+T49 --> T3
+T49 --> T2
+T49 --> T1
+T48 --> fp
+T48 --> T7
+T48 --> T6
+T48 --> T48
+T48 --> T2
+T48 --> T1
+T47 --> fp
+T47 --> T7
+T47 --> T6
+T47 --> T47
+T47 --> T2
+T47 --> T1
+T51 --> fp
+T51 --> T7
+T51 --> T6
+T51 --> T51
+T51 --> T2
+T51 --> T1
+T4 --> fp
+T4 --> T7
+T4 --> T6
+T4 --> T4
+T4 --> T2
+T4 --> T1
+T4 --> fp
+T4 --> T7
+T4 --> T6
+T4 --> T4
+T4 --> T2
+T4 --> T1
+T5 --> fp
+T5 --> T7
+T5 --> T6
+T5 --> T5
+T5 --> T2
+T5 --> T1
+T52 --> fp
+T52 --> T7
+T52 --> T6
+T52 --> T52
+T52 --> T2
+T52 --> T1
+T0 --> r0
+T0 --> fp
+T0 --> T0
+T54 --> r0
+T54 --> fp
+T54 --> T54
+T54 --> T0
+T53 --> r0
+T53 --> fp
+T53 --> T53
+T53 --> T0
+T57 --> r0
+T57 --> fp
+T57 --> T57
+T57 --> T0
+T56 --> r0
+T56 --> fp
+T56 --> T56
+T56 --> T0
+T58 --> r0
+T58 --> fp
+T58 --> T58
+T58 --> T56
+T58 --> T0
+T55 --> r0
+T55 --> fp
+T55 --> T55
+T55 --> T0
+T20 --> r0
+T20 --> fp
+T20 --> T20
+T20 --> T0
+T59 --> r0
+T59 --> fp
+T59 --> T59
+T59 --> T20
+T59 --> T0
+T8 --> r0
+T8 --> fp
+T8 --> T8
+T8 --> T20
+T8 --> T0
+T8 --> r0
+T8 --> fp
+T8 --> T8
+T8 --> T20
+T8 --> T0
+T60 --> T60
+T62 --> r0
+T62 --> fp
+T62 --> T8
+T62 --> T62
+T62 --> T20
+T62 --> T0
+T61 --> r0
+T61 --> fp
+T61 --> T61
+T61 --> T20
+T61 --> T0
+T64 --> fp
+T64 --> T8
+T64 --> T64
+T64 --> T20
+T64 --> T0
+T63 --> fp
+T63 --> T8
+T63 --> T63
+T63 --> T20
+T63 --> T0
+T9 --> fp
+T9 --> T9
+T9 --> T8
+T9 --> T20
+T9 --> T0
+T68 --> r0
+T68 --> fp
+T68 --> T9
+T68 --> T8
+T68 --> T68
+T68 --> T20
+T68 --> T0
+T67 --> r0
+T67 --> fp
+T67 --> T9
+T67 --> T8
+T67 --> T67
+T67 --> T20
+T67 --> T0
+T66 --> r0
+T66 --> fp
+T66 --> T8
+T66 --> T66
+T66 --> T20
+T66 --> T0
+T65 --> r0
+T65 --> fp
+T65 --> T8
+T65 --> T65
+T65 --> T20
+T65 --> T0
+T69 --> r0
+T69 --> fp
+T69 --> T8
+T69 --> T69
+T69 --> T65
+T69 --> T20
+T69 --> T0
+T71 --> fp
+T71 --> T8
+T71 --> T71
+T71 --> T20
+T71 --> T0
+T70 --> fp
+T70 --> T8
+T70 --> T70
+T70 --> T20
+T70 --> T0
+T10 --> fp
+T10 --> T8
+T10 --> T20
+T10 --> T10
+T10 --> T0
+T72 --> fp
+T72 --> T8
+T72 --> T72
+T72 --> T20
+T72 --> T10
+T72 --> T0
+T76 --> r0
+T76 --> fp
+T76 --> T8
+T76 --> T76
+T76 --> T20
+T76 --> T10
+T76 --> T0
+T77 --> r0
+T77 --> fp
+T77 --> T8
+T77 --> T77
+T77 --> T76
+T77 --> T20
+T77 --> T10
+T77 --> T0
+T75 --> r0
+T75 --> fp
+T75 --> T8
+T75 --> T75
+T75 --> T20
+T75 --> T10
+T75 --> T0
+T74 --> r0
+T74 --> fp
+T74 --> T8
+T74 --> T74
+T74 --> T20
+T74 --> T0
+T73 --> r0
+T73 --> fp
+T73 --> T8
+T73 --> T73
+T73 --> T20
+T73 --> T0
+T78 --> r0
+T78 --> fp
+T78 --> T8
+T78 --> T78
+T78 --> T73
+T78 --> T20
+T78 --> T0
+T80 --> fp
+T80 --> T80
+T80 --> T8
+T80 --> T20
+T80 --> T0
+T79 --> fp
+T79 --> T8
+T79 --> T79
+T79 --> T20
+T79 --> T0
+T11 --> fp
+T11 --> T8
+T11 --> T20
+T11 --> T11
+T11 --> T0
+T83 --> fp
+T83 --> T83
+T83 --> T8
+T83 --> T20
+T83 --> T11
+T83 --> T0
+T82 --> fp
+T82 --> T82
+T82 --> T8
+T82 --> T20
+T82 --> T11
+T82 --> T0
+T81 --> fp
+T81 --> T81
+T81 --> T8
+T81 --> T20
+T81 --> T11
+T81 --> T0
+T89 --> r0
+T89 --> fp
+T89 --> T89
+T89 --> T8
+T89 --> T20
+T89 --> T11
+T89 --> T0
+T88 --> r0
+T88 --> fp
+T88 --> T88
+T88 --> T8
+T88 --> T20
+T88 --> T11
+T88 --> T0
+T87 --> r0
+T87 --> fp
+T87 --> T87
+T87 --> T8
+T87 --> T20
+T87 --> T11
+T87 --> T0
+T90 --> r0
+T90 --> fp
+T90 --> T90
+T90 --> T87
+T90 --> T8
+T90 --> T20
+T90 --> T11
+T90 --> T0
+T86 --> r0
+T86 --> fp
+T86 --> T86
+T86 --> T8
+T86 --> T20
+T86 --> T11
+T86 --> T0
+T85 --> r0
+T85 --> fp
+T85 --> T85
+T85 --> T8
+T85 --> T20
+T85 --> T0
+T84 --> r0
+T84 --> fp
+T84 --> T84
+T84 --> T8
+T84 --> T20
+T84 --> T0
+T91 --> r0
+T91 --> fp
+T91 --> T91
+T91 --> T84
+T91 --> T8
+T91 --> T20
+T91 --> T0
+T93 --> fp
+T93 --> T93
+T93 --> T8
+T93 --> T20
+T93 --> T0
+T92 --> fp
+T92 --> T92
+T92 --> T8
+T92 --> T20
+T92 --> T0
+T12 --> fp
+T12 --> T8
+T12 --> T20
+T12 --> T12
+T12 --> T0
+T94 --> fp
+T94 --> T94
+T94 --> T8
+T94 --> T20
+T94 --> T12
+T94 --> T0
+T96 --> fp
+T96 --> T96
+T96 --> T94
+T96 --> T8
+T96 --> T20
+T96 --> T12
+T96 --> T0
+T95 --> fp
+T95 --> T95
+T95 --> T94
+T95 --> T8
+T95 --> T20
+T95 --> T12
+T95 --> T0
+T98 --> fp
+T98 --> T98
+T98 --> T8
+T98 --> T20
+T98 --> T0
+T97 --> fp
+T97 --> T97
+T97 --> T8
+T97 --> T20
+T97 --> T0
+T13 --> fp
+T13 --> T8
+T13 --> T20
+T13 --> T13
+T13 --> T0
+T99 --> fp
+T99 --> T99
+T99 --> T8
+T99 --> T20
+T99 --> T13
+T99 --> T0
+T100 --> fp
+T100 --> T8
+T100 --> T20
+T100 --> T13
+T100 --> T100
+T100 --> T0
+T102 --> fp
+T102 --> T8
+T102 --> T20
+T102 --> T13
+T102 --> T102
+T102 --> T100
+T102 --> T0
+T103 --> fp
+T103 --> T8
+T103 --> T20
+T103 --> T13
+T103 --> T103
+T103 --> T102
+T103 --> T100
+T103 --> T0
+T101 --> fp
+T101 --> T8
+T101 --> T20
+T101 --> T13
+T101 --> T101
+T101 --> T100
+T101 --> T0
+T105 --> fp
+T105 --> T8
+T105 --> T20
+T105 --> T105
+T105 --> T0
+T104 --> fp
+T104 --> T8
+T104 --> T20
+T104 --> T104
+T104 --> T0
+T14 --> fp
+T14 --> T8
+T14 --> T20
+T14 --> T14
+T14 --> T0
+T108 --> fp
+T108 --> T8
+T108 --> T20
+T108 --> T14
+T108 --> T108
+T108 --> T0
+T107 --> fp
+T107 --> T8
+T107 --> T20
+T107 --> T14
+T107 --> T107
+T107 --> T0
+T106 --> fp
+T106 --> T8
+T106 --> T20
+T106 --> T14
+T106 --> T106
+T106 --> T0
+T109 --> fp
+T109 --> T8
+T109 --> T20
+T109 --> T14
+T109 --> T109
+T109 --> T0
+T113 --> fp
+T113 --> T8
+T113 --> T20
+T113 --> T14
+T113 --> T113
+T113 --> T109
+T113 --> T0
+T112 --> fp
+T112 --> T8
+T112 --> T20
+T112 --> T14
+T112 --> T112
+T112 --> T109
+T112 --> T0
+T111 --> fp
+T111 --> T8
+T111 --> T20
+T111 --> T14
+T111 --> T111
+T111 --> T109
+T111 --> T0
+T114 --> fp
+T114 --> T8
+T114 --> T20
+T114 --> T14
+T114 --> T114
+T114 --> T111
+T114 --> T109
+T114 --> T0
+T110 --> fp
+T110 --> T8
+T110 --> T20
+T110 --> T14
+T110 --> T110
+T110 --> T109
+T110 --> T0
+T116 --> fp
+T116 --> T8
+T116 --> T20
+T116 --> T116
+T116 --> T0
+T115 --> fp
+T115 --> T8
+T115 --> T20
+T115 --> T115
+T115 --> T0
+T15 --> fp
+T15 --> T8
+T15 --> T20
+T15 --> T15
+T15 --> T0
+T118 --> fp
+T118 --> T8
+T118 --> T20
+T118 --> T15
+T118 --> T118
+T118 --> T0
+T117 --> fp
+T117 --> T8
+T117 --> T20
+T117 --> T15
+T117 --> T117
+T117 --> T0
+T120 --> fp
+T120 --> T8
+T120 --> T20
+T120 --> T120
+T120 --> T0
+T119 --> fp
+T119 --> T8
+T119 --> T20
+T119 --> T119
+T119 --> T0
+T16 --> fp
+T16 --> T8
+T16 --> T20
+T16 --> T16
+T16 --> T0
+T121 --> fp
+T121 --> T8
+T121 --> T20
+T121 --> T16
+T121 --> T121
+T121 --> T0
+T123 --> fp
+T123 --> T8
+T123 --> T20
+T123 --> T123
+T123 --> T0
+T122 --> fp
+T122 --> T8
+T122 --> T20
+T122 --> T122
+T122 --> T0
+T17 --> fp
+T17 --> T8
+T17 --> T20
+T17 --> T17
+T17 --> T0
+T124 --> fp
+T124 --> T8
+T124 --> T20
+T124 --> T17
+T124 --> T124
+T124 --> T0
+T126 --> fp
+T126 --> T8
+T126 --> T20
+T126 --> T17
+T126 --> T126
+T126 --> T124
+T126 --> T0
+T125 --> fp
+T125 --> T8
+T125 --> T20
+T125 --> T17
+T125 --> T125
+T125 --> T124
+T125 --> T0
+T128 --> fp
+T128 --> T8
+T128 --> T20
+T128 --> T128
+T128 --> T0
+T127 --> fp
+T127 --> T8
+T127 --> T20
+T127 --> T127
+T127 --> T0
+T18 --> fp
+T18 --> T8
+T18 --> T20
+T18 --> T18
+T18 --> T0
+T129 --> fp
+T129 --> T8
+T129 --> T20
+T129 --> T18
+T129 --> T129
+T129 --> T0
+T130 --> fp
+T130 --> T8
+T130 --> T20
+T130 --> T18
+T130 --> T130
+T130 --> T0
+T132 --> fp
+T132 --> T8
+T132 --> T20
+T132 --> T18
+T132 --> T132
+T132 --> T130
+T132 --> T0
+T133 --> fp
+T133 --> T8
+T133 --> T20
+T133 --> T18
+T133 --> T133
+T133 --> T132
+T133 --> T130
+T133 --> T0
+T131 --> fp
+T131 --> T8
+T131 --> T20
+T131 --> T18
+T131 --> T131
+T131 --> T130
+T131 --> T0
+T135 --> fp
+T135 --> T8
+T135 --> T20
+T135 --> T135
+T135 --> T0
+T134 --> fp
+T134 --> T8
+T134 --> T20
+T134 --> T134
+T134 --> T0
+T19 --> fp
+T19 --> T8
+T19 --> T20
+T19 --> T19
+T19 --> T0
+T138 --> fp
+T138 --> T8
+T138 --> T20
+T138 --> T19
+T138 --> T138
+T138 --> T0
+T137 --> fp
+T137 --> T8
+T137 --> T20
+T137 --> T19
+T137 --> T137
+T137 --> T0
+T136 --> fp
+T136 --> T8
+T136 --> T20
+T136 --> T19
+T136 --> T136
+T136 --> T0
+T139 --> r0
+T139 --> fp
+T139 --> T8
+T139 --> T20
+T139 --> T19
+T139 --> T139
+T139 --> T0
+T143 --> r0
+T143 --> fp
+T143 --> T8
+T143 --> T20
+T143 --> T19
+T143 --> T143
+T143 --> T139
+T143 --> T0
+T142 --> r0
+T142 --> fp
+T142 --> T8
+T142 --> T20
+T142 --> T19
+T142 --> T142
+T142 --> T139
+T142 --> T0
+T141 --> r0
+T141 --> fp
+T141 --> T8
+T141 --> T20
+T141 --> T19
+T141 --> T141
+T141 --> T139
+T141 --> T0
+T144 --> r0
+T144 --> fp
+T144 --> T8
+T144 --> T20
+T144 --> T19
+T144 --> T144
+T144 --> T141
+T144 --> T139
+T144 --> T0
+T140 --> r0
+T140 --> fp
+T140 --> T8
+T140 --> T20
+T140 --> T19
+T140 --> T140
+T140 --> T139
+T140 --> T0
+T145 --> fp
+T145 --> T145
+T147 --> fp
+T147 --> T147
+T146 --> fp
+T146 --> T146
+T22 --> fp
+T22 --> T22
+T148 --> fp
+T148 --> T22
+T148 --> T148
+T149 --> fp
+T149 --> T22
+T149 --> T149
+T149 --> T148
+T21 --> fp
+T21 --> T22
+T21 --> T21
+T151 --> fp
+T151 --> T151
+T150 --> fp
+T150 --> T150
+T24 --> fp
+T24 --> T24
+T152 --> fp
+T152 --> T24
+T152 --> T152
+T153 --> fp
+T153 --> T24
+T153 --> T153
+T153 --> T152
+T23 --> fp
+T23 --> T24
+T23 --> T23
+T155 --> fp
+T155 --> T155
+T154 --> fp
+T154 --> T154
+T26 --> fp
+T26 --> T26
+T158 --> fp
+T158 --> T26
+T158 --> T158
+T159 --> fp
+T159 --> T26
+T159 --> T159
+T159 --> T158
+T157 --> fp
+T157 --> T26
+T157 --> T157
+T160 --> fp
+T160 --> T26
+T160 --> T160
+T160 --> T157
+T156 --> fp
+T156 --> T26
+T156 --> T156
+T161 --> fp
+T161 --> T26
+T161 --> T161
+T161 --> T156
+T25 --> fp
+T25 --> T26
+T25 --> T25
+T163 --> fp
+T163 --> T163
+T162 --> fp
+T162 --> T162
+T28 --> fp
+T28 --> T28
+T166 --> fp
+T166 --> T28
+T166 --> T166
+T167 --> fp
+T167 --> T28
+T167 --> T167
+T167 --> T166
+T165 --> fp
+T165 --> T28
+T165 --> T165
+T168 --> fp
+T168 --> T28
+T168 --> T168
+T168 --> T165
+T164 --> fp
+T164 --> T28
+T164 --> T164
+T169 --> fp
+T169 --> T28
+T169 --> T169
+T169 --> T164
+T27 --> fp
+T27 --> T28
+T27 --> T27
+T170 --> fp
+T170 --> T170
+
+
+
+
+
+initial:
+T145
+T146
+T147
+T148
+T149
+T150
+T151
+T152
+T153
+T154
+T155
+T156
+T157
+T158
+T159
+T160
+T161
+T162
+T163
+T164
+T165
+T166
+T167
+T168
+T169
+T170
+T21
+T22
+T23
+T24
+T25
+T26
+T27
+T28
+
+
+precolored:
+r0
+r1
+r10
+r2
+r3
+r4
+r5
+r6
+r7
+r8
+r9
+
+
+simplifyWorklist:
+T145
+T147
+T151
+T155
+T157
+T158
+T159
+T160
+T163
+T165
+T166
+T167
+T168
+
+
+freezeWorklist:
+T146
+T148
+T149
+T150
+T152
+T153
+T154
+T156
+T161
+T162
+T164
+T169
+T170
+T21
+T22
+T23
+T24
+T25
+T27
+
+
+spillWorklist:
+T26
+T28
+
+
+Before loop...
+
+
+After loop...
+
+
+color:
+fp->fp
+lr->lr
+r10->r10
+r0->r0
+r1->r1
+r2->r2
+r3->r3
+r4->r4
+r5->r5
+r6->r6
+r7->r7
+r8->r8
+r9->r9
+pc->pc
+sp->sp
+T21->r0
+T22->r10
+T23->r0
+T24->r10
+T25->r0
+T26->r10
+T27->r0
+T28->r10
+T145->r10
+T146->r10
+T147->r10
+T148->r0
+T149->r1
+T150->r10
+T151->r10
+T152->r0
+T153->r1
+T154->r10
+T155->r10
+T156->r0
+T157->r1
+T158->r1
+T159->r0
+T160->r0
+T161->r1
+T162->r10
+T163->r10
+T164->r0
+T165->r1
+T166->r1
+T167->r0
+T168->r0
+T169->r1
+T170->r1
+
+
+spilledNodes:
+
+
+********** END COLOR: **********  
+
+**********  CÓDIGO FINAL: **********  
+
+	.arch armv7-a
+	.file	"program.s"
+	.global	__aeabi_idiv
+	.section	.rodata
+	.align	2
+L4:
+	.long	2
+	.ascii	" O"
+	.align	2
+L5:
+	.long	2
+	.ascii	" ."
+	.align	2
+L12:
+	.long	1
+	.ascii	"\n"
+	.align	2
+L16:
+	.long	1
+	.ascii	"\n"
+	.text
+
+	@prologo:
+.align 2
+.global L0
+.type   L0, %function
+	L0:
+	push {r4,r5,r6,r7,r8,r9,r10,fp,lr}
+	sub     fp, sp, #4
+	sub     sp, #4
+
+L29:
+str     r0, [fp, #0]
+ldr     r10, [fp, #0]
+ldr     r10, [r10, #-4]
+mov r1, #1
+sub     r5, r10, r1
+movw   r10, #:lower16:0
+movt   r10, #:upper16:0
+L13:
+cmp     r10, r5
+ble L14
+L2:
+movw    r0, #:lower16:L16
+movt    r0, #:upper16:L16
+bl      print
+b       L28
+L15:
+mov r4, #1
+add     r10, r10, r4
+b       L13
+L14:
+ldr     r4, [fp, #0]
+ldr     r4, [r4, #-4]
+mov r3, #1
+sub     r7, r4, r3
+movw   r6, #:lower16:0
+movt   r6, #:upper16:0
+L9:
+cmp     r6, r7
+ble L10
+L3:
+movw    r0, #:lower16:L12
+movt    r0, #:upper16:L12
+bl      print
+cmp     r10, r5
+beq L2
+L30:
+b       L15
+L11:
+mov r4, #1
+add     r6, r6, r4
+b       L9
+L10:
+ldr     r4, [fp, #0]
+ldr     r4, [r4, #-12]
+mov     r0, r4
+mov     r1, r10
+bl      _checkIndexArray
+mov r3, #2
+lsl     r3, r10, r3
+add     r4, r4, r3
+ldr    r4, [r4]
+cmp     r4, r6
+beq L6
+L7:
+movw    r0, #:lower16:L5
+movt    r0, #:upper16:L5
+L8:
+bl      print
+cmp     r6, r7
+beq L3
+L31:
+b       L11
+L6:
+movw    r0, #:lower16:L4
+movt    r0, #:upper16:L4
+b       L8
+L28:
+
+@epilogo
+	add     sp, #4
+	pop {r4,r5,r6,r7,r8,r9,r10,fp,pc}
+
+	@prologo:
+.align 2
+.global L1
+.type   L1, %function
+	L1:
+	push {r4,r5,r6,r7,r8,r9,r10,fp,lr}
+	sub     fp, sp, #4
+	sub     sp, #4
+
+L33:
+str     r0, [fp, #0]
+mov     r10, r1
+ldr     r1, [fp, #0]
+ldr     r1, [r1, #-4]
+cmp     r10, r1
+beq L25
+L26:
+ldr     r1, [fp, #0]
+ldr     r1, [r1, #-4]
+mov r8, #1
+sub     r4, r1, r8
+movw   r8, #:lower16:0
+movt   r8, #:upper16:0
+L22:
+cmp     r8, r4
+ble L23
+L17:
+L27:
+b       L32
+L25:
+ldr     r0, [fp, #0]
+bl      L0
+b       L27
+L24:
+mov r6, #1
+add     r8, r8, r6
+b       L22
+L23:
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-8]
+mov     r0, r6
+mov     r1, r8
+bl      _checkIndexArray
+mov r3, #2
+lsl     r3, r8, r3
+add     r6, r6, r3
+ldr    r6, [r6]
+movw   r5, #:lower16:0
+movt   r5, #:upper16:0
+cmp     r6, r5
+beq L18
+L21:
+cmp     r8, r4
+beq L17
+L34:
+b       L24
+L18:
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-16]
+add     r1, r8, r10
+mov     r0, r6
+bl      _checkIndexArray
+add     r5, r8, r10
+mov r3, #2
+lsl     r5, r5, r3
+add     r6, r6, r5
+ldr    r6, [r6]
+movw   r5, #:lower16:0
+movt   r5, #:upper16:0
+cmp     r6, r5
+bne L21
+L19:
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-20]
+mov r7, #7
+add     r7, r8, r7
+sub     r1, r7, r10
+mov     r0, r6
+bl      _checkIndexArray
+mov r5, #7
+add     r5, r8, r5
+sub     r5, r5, r10
+mov r2, #2
+lsl     r5, r5, r2
+add     r6, r6, r5
+ldr    r6, [r6]
+movw   r3, #:lower16:0
+movt   r3, #:upper16:0
+cmp     r6, r3
+bne L21
+L20:
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-8]
+mov     r0, r6
+mov     r1, r8
+bl      _checkIndexArray
+mov r7, #1
+mov r5, #2
+lsl     r5, r8, r5
+str     r7, [r6, r5]
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-16]
+add     r1, r8, r10
+mov     r0, r6
+bl      _checkIndexArray
+mov r7, #1
+add     r5, r8, r10
+mov r3, #2
+lsl     r5, r5, r3
+str     r7, [r6, r5]
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-20]
+mov r7, #7
+add     r7, r8, r7
+sub     r1, r7, r10
+mov     r0, r6
+bl      _checkIndexArray
+mov r7, #1
+mov r5, #7
+add     r5, r8, r5
+sub     r5, r5, r10
+mov r3, #2
+lsl     r5, r5, r3
+str     r7, [r6, r5]
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-12]
+mov     r0, r6
+mov     r1, r10
+bl      _checkIndexArray
+mov r7, #2
+lsl     r7, r10, r7
+str     r8, [r6, r7]
+mov r7, #1
+add     r1, r10, r7
+ldr     r0, [fp, #0]
+bl      L1
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-8]
+mov     r0, r6
+mov     r1, r8
+bl      _checkIndexArray
+movw   r7, #:lower16:0
+movt   r7, #:upper16:0
+mov r5, #2
+lsl     r5, r8, r5
+str     r7, [r6, r5]
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-16]
+add     r1, r8, r10
+mov     r0, r6
+bl      _checkIndexArray
+movw   r7, #:lower16:0
+movt   r7, #:upper16:0
+add     r5, r8, r10
+mov r3, #2
+lsl     r5, r5, r3
+str     r7, [r6, r5]
+ldr     r7, [fp, #0]
+ldr     r6, [r7, #-20]
+mov r7, #7
+add     r7, r8, r7
+sub     r1, r7, r10
+mov     r0, r6
+bl      _checkIndexArray
+movw   r5, #:lower16:0
+movt   r5, #:upper16:0
+mov r3, #7
+add     r3, r8, r3
+sub     r3, r3, r10
+mov r2, #2
+lsl     r3, r3, r2
+str     r5, [r6, r3]
+b       L21
+L32:
+
+@epilogo
+	add     sp, #4
+	pop {r4,r5,r6,r7,r8,r9,r10,fp,pc}
+
+	@prologo:
+.align 2
+.global tigermain
+.type   tigermain, %function
+	tigermain:
+	push {r4,r5,r6,r7,r8,r9,r10,fp,lr}
+	sub     fp, sp, #4
+	sub     sp, #24
+
+L36:
+str     r0, [fp, #0]
+mov r10, #8
+str     r10, [fp, #-4]
+mov r10, #8
+sub     r10, fp, r10
+ldr     r0, [fp, #-4]
+movw   r1, #:lower16:0
+movt   r1, #:upper16:0
+bl      _initArray
+str     r0,[r10]
+mov r10, #12
+sub     r10, fp, r10
+ldr     r0, [fp, #-4]
+movw   r1, #:lower16:0
+movt   r1, #:upper16:0
+bl      _initArray
+str     r0,[r10]
+mov r10, #16
+sub     r10, fp, r10
+ldr     r1, [fp, #-4]
+ldr     r0, [fp, #-4]
+add     r1, r1, r0
+mov r0, #1
+sub     r0, r1, r0
+movw   r1, #:lower16:0
+movt   r1, #:upper16:0
+bl      _initArray
+str     r0,[r10]
+mov r10, #20
+sub     r10, fp, r10
+ldr     r1, [fp, #-4]
+ldr     r0, [fp, #-4]
+add     r1, r1, r0
+mov r0, #1
+sub     r0, r1, r0
+movw   r1, #:lower16:0
+movt   r1, #:upper16:0
+bl      _initArray
+str     r0,[r10]
+movw   r1, #:lower16:0
+movt   r1, #:upper16:0
+mov     r0, fp
+bl      L1
+b       L35
+L35:
+
+@epilogo
+	add     sp, #24
+	pop {r4,r5,r6,r7,r8,r9,r10,fp,pc}
+
+
+**********   **********  
+
+yes!!
